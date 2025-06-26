@@ -51,46 +51,118 @@ summary_readings_past_week %>% kableExtra::kbl()
 
 ### Heat Wave Tables
 
-
 #### 85th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 85th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 85th percentile of daily minimum heat index:
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 85, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
 #### 90th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 90th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 90th percentile of daily minimum heat index:
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 90, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
 
 #### 95th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 95th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 95th percentile of daily minimum heat index:
+
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 95, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
-
-#### 99th Percentile Threshold
-
-Summary of heat waves this year, based on two consecutive days at 99th percentile of daily minimum heat index:
+##### 5-day periods
 
 ```{r}
 
-this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, year(date)==year(today()))
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+#### 99th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 99th percentile of daily minimum heat index:
+
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 2, year(date)==year(today()))
 
 if(nrow(this_heat_wave_summary)>0){
 this_heat_wave_summary %>% kableExtra::kbl() 
@@ -100,6 +172,19 @@ this_heat_wave_summary %>% kableExtra::kbl()
 
 ```
 
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 5, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
 
 ### Thresholds
 

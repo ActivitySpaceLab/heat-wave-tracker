@@ -193,11 +193,17 @@ heat_waves_99p_max_2d = weather_daily %>% left_join(heat_wave_dates_table %>% fi
 
 heat_waves_100p_max_2d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 2, threshold == "Hi_max_100p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
 
+# writing heat wave summary ####
 heat_wave_summary = bind_rows(
-  heat_waves_85p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 85),
-  heat_waves_90p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90),
-  heat_waves_95p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95),
-  heat_waves_100p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100)
+  heat_waves_85p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 85, days = 2),
+  heat_waves_90p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90, days = 2),
+  heat_waves_95p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95, days = 2),
+  heat_waves_100p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100, days = 2),
+  heat_waves_85p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 85, days = 5),
+  heat_waves_90p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90, days = 5),
+  heat_waves_95p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95, days = 5),
+  heat_waves_100p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100, days = 5)
+  
   ) %>% as.data.table()
 
 fwrite(heat_wave_summary, "data/heat_wave_summary.csv.gz")
@@ -243,6 +249,8 @@ summary_readings_past_week = weather_daily %>% filter(date>=today()-7) %>% group
 summary_readings_past_week %>% fwrite("data/summary_readings_past_week.csv.gz")
 
 this_muni = "Sevilla"
+
+# loop through munis ####
 
 for(this_muni in these_munis){
   

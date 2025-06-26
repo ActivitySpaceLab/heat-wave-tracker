@@ -53,10 +53,26 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-checking" id="toc-data-checking" class="nav-link" data-scroll-target="#data-checking">Data Checking</a></li>
   <li><a href="#heat-wave-tables" id="toc-heat-wave-tables" class="nav-link" data-scroll-target="#heat-wave-tables">Heat Wave Tables</a>
   <ul>
-  <li><a href="#th-percentile-threshold" id="toc-th-percentile-threshold" class="nav-link" data-scroll-target="#th-percentile-threshold">85th Percentile Threshold</a></li>
-  <li><a href="#th-percentile-threshold-1" id="toc-th-percentile-threshold-1" class="nav-link" data-scroll-target="#th-percentile-threshold-1">90th Percentile Threshold</a></li>
-  <li><a href="#th-percentile-threshold-2" id="toc-th-percentile-threshold-2" class="nav-link" data-scroll-target="#th-percentile-threshold-2">95th Percentile Threshold</a></li>
-  <li><a href="#th-percentile-threshold-3" id="toc-th-percentile-threshold-3" class="nav-link" data-scroll-target="#th-percentile-threshold-3">99th Percentile Threshold</a></li>
+  <li><a href="#th-percentile-threshold" id="toc-th-percentile-threshold" class="nav-link" data-scroll-target="#th-percentile-threshold">85th Percentile Threshold</a>
+  <ul class="collapse">
+  <li><a href="#day-periods" id="toc-day-periods" class="nav-link" data-scroll-target="#day-periods">2-day periods</a></li>
+  <li><a href="#day-periods-1" id="toc-day-periods-1" class="nav-link" data-scroll-target="#day-periods-1">5-day periods</a></li>
+  </ul></li>
+  <li><a href="#th-percentile-threshold-1" id="toc-th-percentile-threshold-1" class="nav-link" data-scroll-target="#th-percentile-threshold-1">90th Percentile Threshold</a>
+  <ul class="collapse">
+  <li><a href="#day-periods-2" id="toc-day-periods-2" class="nav-link" data-scroll-target="#day-periods-2">2-day periods</a></li>
+  <li><a href="#day-periods-3" id="toc-day-periods-3" class="nav-link" data-scroll-target="#day-periods-3">5-day periods</a></li>
+  </ul></li>
+  <li><a href="#th-percentile-threshold-2" id="toc-th-percentile-threshold-2" class="nav-link" data-scroll-target="#th-percentile-threshold-2">95th Percentile Threshold</a>
+  <ul class="collapse">
+  <li><a href="#day-periods-4" id="toc-day-periods-4" class="nav-link" data-scroll-target="#day-periods-4">2-day periods</a></li>
+  <li><a href="#day-periods-5" id="toc-day-periods-5" class="nav-link" data-scroll-target="#day-periods-5">5-day periods</a></li>
+  </ul></li>
+  <li><a href="#th-percentile-threshold-3" id="toc-th-percentile-threshold-3" class="nav-link" data-scroll-target="#th-percentile-threshold-3">99th Percentile Threshold</a>
+  <ul class="collapse">
+  <li><a href="#day-periods-6" id="toc-day-periods-6" class="nav-link" data-scroll-target="#day-periods-6">2-day periods</a></li>
+  <li><a href="#day-periods-7" id="toc-day-periods-7" class="nav-link" data-scroll-target="#day-periods-7">5-day periods</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#thresholds" id="toc-thresholds" class="nav-link" data-scroll-target="#thresholds">Thresholds</a></li>
   </ul></li>
@@ -131,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.</p>
-<p>Note: This report was last modified at 2025-06-26 13:03:26.988182.</p>
+<p>Note: This report was last modified at 2025-06-26 13:19:28.704051.</p>
 <section id="data-checking" class="level3">
 <h3 class="anchored" data-anchor-id="data-checking">Data Checking</h3>
 <p>Number of station-readings available for each municipality during past week:</p>
@@ -192,7 +208,9 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="heat-wave-tables">Heat Wave Tables</h3>
 <section id="th-percentile-threshold" class="level4">
 <h4 class="anchored" data-anchor-id="th-percentile-threshold">85th Percentile Threshold</h4>
-<p>Summary of heat waves this year, based on two consecutive days at 85th percentile of daily minimum heat index:</p>
+<p>Summary of heat waves this year, based on two and five consecutive days at 85th percentile of daily minimum heat index:</p>
+<section id="day-periods" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods">2-day periods</h5>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -203,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
 <th style="text-align: left;" data-quarto-table-cell-role="th">station_name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">municipality_name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">threshold</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">days</th>
 </tr>
 </thead>
 <tbody>
@@ -212,6 +231,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-22</td>
@@ -219,6 +239,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">MADRID,RETIRO</td>
 <td style="text-align: left;">Madrid</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-22</td>
@@ -226,6 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-22</td>
@@ -233,6 +255,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA/SAN PABLO</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-21</td>
@@ -240,6 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-21</td>
@@ -247,6 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">MADRID,RETIRO</td>
 <td style="text-align: left;">Madrid</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-21</td>
@@ -254,6 +279,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-21</td>
@@ -261,6 +287,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">BARCELONA,CMT</td>
 <td style="text-align: left;">Barcelona</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-21</td>
@@ -268,6 +295,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA/SAN PABLO</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-20</td>
@@ -275,6 +303,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-20</td>
@@ -282,6 +311,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-20</td>
@@ -289,6 +319,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">BARCELONA,CMT</td>
 <td style="text-align: left;">Barcelona</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-20</td>
@@ -296,6 +327,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA/SAN PABLO</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-19</td>
@@ -303,6 +335,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-19</td>
@@ -310,6 +343,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-19</td>
@@ -317,6 +351,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">SEVILLA/SAN PABLO</td>
 <td style="text-align: left;">Sevilla</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025-06-11</td>
@@ -324,6 +359,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2025-06-10</td>
@@ -331,6 +367,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
 <td style="text-align: left;">Zaragoza</td>
 <td style="text-align: right;">85</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
@@ -339,172 +376,232 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="th-percentile-threshold-1" class="level4">
-<h4 class="anchored" data-anchor-id="th-percentile-threshold-1">90th Percentile Threshold</h4>
-<p>Summary of heat waves this year, based on two consecutive days at 90th percentile of daily minimum heat index:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">indicativo</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">station_name</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">municipality_name</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">threshold</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">2025-06-22</td>
-<td style="text-align: left;">9434P</td>
-<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
-<td style="text-align: left;">Zaragoza</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-22</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-22</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-21</td>
-<td style="text-align: left;">9434P</td>
-<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
-<td style="text-align: left;">Zaragoza</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-21</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-21</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-20</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-20</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-19</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-19</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">90</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-</section>
-<section id="th-percentile-threshold-2" class="level4">
-<h4 class="anchored" data-anchor-id="th-percentile-threshold-2">95th Percentile Threshold</h4>
-<p>Summary of heat waves this year, based on two consecutive days at 95th percentile of daily minimum heat index:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">indicativo</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">station_name</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">municipality_name</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">threshold</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">2025-06-22</td>
-<td style="text-align: left;">9434P</td>
-<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
-<td style="text-align: left;">Zaragoza</td>
-<td style="text-align: right;">95</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-21</td>
-<td style="text-align: left;">9434P</td>
-<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
-<td style="text-align: left;">Zaragoza</td>
-<td style="text-align: right;">95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-20</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">95</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-20</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2025-06-19</td>
-<td style="text-align: left;">5790Y</td>
-<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">95</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2025-06-19</td>
-<td style="text-align: left;">5783</td>
-<td style="text-align: left;">SEVILLA/SAN PABLO</td>
-<td style="text-align: left;">Sevilla</td>
-<td style="text-align: right;">95</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-</section>
-<section id="th-percentile-threshold-3" class="level4">
-<h4 class="anchored" data-anchor-id="th-percentile-threshold-3">99th Percentile Threshold</h4>
-<p>Summary of heat waves this year, based on two consecutive days at 99th percentile of daily minimum heat index:</p>
+<section id="day-periods-1" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-1">5-day periods</h5>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>No heat waves yet at this threshold.</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="th-percentile-threshold-1" class="level4">
+<h4 class="anchored" data-anchor-id="th-percentile-threshold-1">90th Percentile Threshold</h4>
+<p>Summary of heat waves this year, based on two and five consecutive days at 90th percentile of daily minimum heat index:</p>
+<section id="day-periods-2" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-2">2-day periods</h5>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">indicativo</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">station_name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">municipality_name</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">threshold</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">days</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2025-06-22</td>
+<td style="text-align: left;">9434P</td>
+<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
+<td style="text-align: left;">Zaragoza</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-22</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-22</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-21</td>
+<td style="text-align: left;">9434P</td>
+<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
+<td style="text-align: left;">Zaragoza</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-21</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-21</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-20</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-20</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-19</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-19</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="day-periods-3" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-3">5-day periods</h5>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No heat waves yet at this threshold.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="th-percentile-threshold-2" class="level4">
+<h4 class="anchored" data-anchor-id="th-percentile-threshold-2">95th Percentile Threshold</h4>
+<p>Summary of heat waves this year, based on two and five consecutive days at 95th percentile of daily minimum heat index:</p>
+<section id="day-periods-4" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-4">2-day periods</h5>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">indicativo</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">station_name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">municipality_name</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">threshold</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">days</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2025-06-22</td>
+<td style="text-align: left;">9434P</td>
+<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
+<td style="text-align: left;">Zaragoza</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-21</td>
+<td style="text-align: left;">9434P</td>
+<td style="text-align: left;">ZARAGOZA-VALDESPARTERA</td>
+<td style="text-align: left;">Zaragoza</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-20</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-20</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2025-06-19</td>
+<td style="text-align: left;">5790Y</td>
+<td style="text-align: left;">SEVILLA 'TABLADA AUT THIES'</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2025-06-19</td>
+<td style="text-align: left;">5783</td>
+<td style="text-align: left;">SEVILLA/SAN PABLO</td>
+<td style="text-align: left;">Sevilla</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="day-periods-5" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-5">5-day periods</h5>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No heat waves yet at this threshold.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="th-percentile-threshold-3" class="level4">
+<h4 class="anchored" data-anchor-id="th-percentile-threshold-3">99th Percentile Threshold</h4>
+<p>Summary of heat waves this year, based on two and five consecutive days at 99th percentile of daily minimum heat index:</p>
+<section id="day-periods-6" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-6">2-day periods</h5>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No heat waves yet at this threshold.</code></pre>
+</div>
+</div>
+</section>
+<section id="day-periods-7" class="level5">
+<h5 class="anchored" data-anchor-id="day-periods-7">5-day periods</h5>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>No heat waves yet at this threshold.</code></pre>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="thresholds" class="level3">
