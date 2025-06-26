@@ -34,9 +34,17 @@ these_stations = station_info %>% filter(municipality_name %in% these_munis) %>%
 weather_daily = fread("~/research/realtime-weather-spain/data/spain_weather_daily_historical.csv.gz") %>% filter(indicativo %in% these_stations) %>% mutate(date = as_date(date))
 
 # adding latest realtime weather
-weather_realtime = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz")  %>% filter(idema %in% these_stations) %>% pivot_wider(id_cols = c(fint, idema), names_from = measure, values_from = value) %>% mutate(date = as_date(fint)) %>% group_by(date, indicativo = idema) %>% summarise(TX = max(tamax), TN = min(tamin), HRX = max(hr), HRN = min(hr), .groups = "drop") %>% filter(!date %in% weather_daily$date) %>% mutate(date = as_date(date))
+weather_realtime = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz")  %>% filter(idema %in% these_stations) %>% mutate(fint = with_tz(fint, "CET")) %>% pivot_wider(id_cols = c(fint, idema), names_from = measure, values_from = value) %>% mutate(date = as_date(fint)) %>% rename(indicativo = idema)
 
-weather_daily = rbindlist(list(weather_daily, weather_realtime))
+n_per_day = weather_realtime %>% group_by(date, indicativo) %>% summarise(n = n(), .groups = "drop")
+
+weather_realtime = weather_realtime %>% left_join(n_per_day) %>% filter(n ==24) 
+
+if(nrow(weather_realtime)>0){
+  weather_realtime %>% group_by(date, indicativo) %>% summarise(TX = max(tamax), TN = min(tamin), HRX = max(hr), HRN = min(hr), .groups = "drop") %>% filter(!date %in% weather_daily$date) %>% mutate(date = as_date(date))
+
+  weather_daily = rbindlist(list(weather_daily, weather_realtime))
+}
 
 # Cleaning ####
 weather_daily %>% filter(!is.na(HRN)) %>% pull(HRN) %>% range() # HRN looks fine.
