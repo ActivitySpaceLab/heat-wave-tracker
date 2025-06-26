@@ -23,6 +23,7 @@ execute:
 library(tidyverse)
 library(kableExtra)
 library(data.table)
+library(lubridate)
 
 heat_wave_summary = fread("data/heat_wave_summary.csv.gz")
 
@@ -35,6 +36,8 @@ summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
 ## Summary
 
 CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
+
+Note: This report was last modified at `r now()`.
 
 ### Data Checking
 
