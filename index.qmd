@@ -113,32 +113,80 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 
 ## Barcelona
 
+### Threshold for at least 2 days
+
 ![Full Time Series](plots/full_timeseries_Barcelona.png)
 
 ![Recent Time Series](plots/recent_timeseries_Barcelona.png)
 
 
+### Threshold for at least 5 days
+
+![Full Time Series](plots/full_timeseries_5d_Barcelona.png)
+
+![Recent Time Series](plots/recent_timeseries_5d_Barcelona.png)
+
 ## Madrid
+
+
+### Threshold for at least 2 days
+
 
 ![Full Time Series](plots/full_timeseries_Madrid.png)
 ![Recent Time Series](plots/recent_timeseries_Madrid.png)
 
 
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_Madrid.png)
+
+
+![Recent Time Series](plots/recent_timeseries_5d_Madrid.png)
+
 ## Valencia
+
+### Threshold for at least 2 days
 
 ![Full Time Series](plots/full_timeseries_València.png)
 
 ![Recent Time Series](plots/recent_timeseries_València)
 
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_València.png)
+
+
+![Recent Time Series](plots/recent_timeseries_5d_València)
+
 
 ## Sevilla
+
+
+### Threshold for at least 2 days
 
 ![Full Time Series](plots/full_timeseries_Sevilla.png)
 ![Recent Time Series](plots/recent_timeseries_Sevilla.png)
 
+### Threshold for at least 5 days
+
+
+
+![Full Time Series](plots/full_timeseries_5d_Sevilla.png)
+![Recent Time Series](plots/recent_timeseries_5d_Sevilla.png)
 
 ## Zaragoza
+
+### Threshold for at least 2 days
 
 ![Full Time Series](plots/full_timeseries_Zaragoza.png)
 
 ![Recent Time Series](plots/recent_timeseries_Zaragoza.png)
+
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_Zaragoza.png)
+
+![Recent Time Series](plots/recent_timeseries_5d_Zaragoza.png)
