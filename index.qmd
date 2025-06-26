@@ -1,0 +1,122 @@
+---
+title: "Heat Wave Monitor"
+date-modified: now
+author: 
+  - name: John Palmer
+    orcid: 0000-0002-2648-7860
+    email: john.palmer@upf.edu
+    affiliations:
+      - name: Universitat Pompeu Fabra
+format:
+  html:
+    toc: true
+    toc-depth: 5
+execute: 
+  echo: false
+  cache: true
+---
+
+```{r}
+#| label: load
+#| message: false
+
+library(tidyverse)
+library(kableExtra)
+library(data.table)
+
+heat_wave_summary = fread("data/heat_wave_summary.csv.gz")
+
+Hi_min_thresholds_table = fread("data/Hi_min_thresholds_table.csv.gz")
+
+summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
+
+```
+
+## Summary
+
+CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
+
+Number of station-readings available for each municipality during past week:
+
+```{r}
+
+summary_readings_past_week %>% kableExtra::kbl() 
+
+```
+
+Summary of heat waves this year, based on two consecutive days at 85th percentile of daily minimum heat index:
+
+```{r}
+
+heat_wave_summary %>% filter(threshold == 85, year(date)==year(today())) %>% kableExtra::kbl() 
+
+```
+
+
+Summary of heat waves this year, based on two consecutive days at 90th percentile of daily minimum heat index:
+
+```{r}
+
+heat_wave_summary %>% filter(threshold == 90, year(date)==year(today())) %>% kableExtra::kbl() 
+
+```
+
+
+
+Summary of heat waves this year, based on two consecutive days at 95th percentile of daily minimum heat index:
+
+```{r}
+
+heat_wave_summary %>% filter(threshold == 95, year(date)==year(today())) %>% kableExtra::kbl() 
+
+```
+
+
+Summary of heat waves this year, based on two consecutive days at 99th percentile of daily minimum heat index:
+
+```{r}
+
+heat_wave_summary %>% filter(threshold == 99, year(date)==year(today())) %>% kableExtra::kbl() 
+
+```
+
+
+Heat wave thresholds:
+
+```{r}
+
+Hi_min_thresholds_table %>% kableExtra::kbl() 
+
+```
+
+## Barcelona
+
+![Full Time Series](plots/full_timeseries_Barcelona.png)
+
+![Recent Time Series](plots/recent_timeseries_Barcelona.png)
+
+
+## Madrid
+
+![Full Time Series](plots/full_timeseries_Madrid.png)
+![Recent Time Series](plots/recent_timeseries_Madrid.png)
+
+
+## Valencia
+
+![Full Time Series](plots/full_timeseries_València.png)
+
+![Recent Time Series](plots/recent_timeseries_València)
+
+
+## Sevilla
+
+![Full Time Series](plots/full_timeseries_Sevilla.png)
+![Recent Time Series](plots/recent_timeseries_Sevilla.png)
+
+
+## Zaragoza
+
+![Full Time Series](plots/full_timeseries_Zaragoza.png)
+
+![Recent Time Series](plots/recent_timeseries_Zaragoza.png)
