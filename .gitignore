@@ -6,3 +6,6 @@
 
 # ignoring auth folder to avoid checking API keys into repo
 auth
+
+# quarto
+index_cache

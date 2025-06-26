@@ -10,6 +10,8 @@ library(data.table)
 library(tidyverse)
 library(weathermetrics)
 library(sf)
+library(gridExtra)
+
 
 # Selected cities ####
 these_munis = c("Barcelona", "Madrid", "València", "Zaragoza", "Sevilla")
@@ -103,6 +105,7 @@ Hi_min_thresholds_table = Hi_min_85p_table %>% dplyr::select(-n) %>% left_join(H
 
 fwrite(Hi_min_thresholds_table, "data/Hi_min_thresholds_table.csv.gz")
 
+
 Hi_max_thresholds_table = Hi_max_85p_table %>% dplyr::select(-n) %>% left_join(Hi_max_90p_table %>% dplyr::select(-n)) %>% left_join(Hi_max_95p_table %>% dplyr::select(-n)) %>% left_join(Hi_max_99p_table %>% dplyr::select(-n)) %>% left_join(Hi_max_100p_table %>% dplyr::select(-n)) %>% as.data.table()
 
 fwrite(Hi_max_thresholds_table, "data/Hi_max_thresholds_table.csv.gz")
@@ -169,7 +172,10 @@ heat_waves_100p_max %>% filter(date >= as_date("2025-01-01")) %>% pull(municipal
 
 
 # writing summary of dates ####
-weather_daily %>% filter(date>=today()-7) %>% group_by(date, municipality_name) %>% summarize(n = n(), .groups = "drop") %>% pivot_wider(id_cols = date, names_from = municipality_name, values_from = n) %>% arrange(date) %>% fwrite("data/summary_readings_past_week.csv.gz")
+summary_readings_past_week = weather_daily %>% filter(date>=today()-7) %>% group_by(date, municipality_name) %>% summarize(n = n(), .groups = "drop") %>% pivot_wider(id_cols = date, names_from = municipality_name, values_from = n) %>% arrange(date) 
+
+
+summary_readings_past_week %>% fwrite("data/summary_readings_past_week.csv.gz")
 
 this_muni = "Sevilla"
 
@@ -241,7 +247,7 @@ for(this_muni in these_munis){
     geom_point(data=this_heat_waves_85p %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
-    geom_hline(data = this_Hi_min_90p_table, aes(yintercept = Hi_min_90p), color = "purple") + ylim(c(10, 45)) + 
+    geom_hline(data = this_Hi_min_90p_table, aes(yintercept = Hi_min_90p), color = "purple") +
     geom_point(data=this_heat_waves_95p %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="yellow") + 
     geom_hline(data = this_Hi_min_95p_table, aes(yintercept = Hi_min_95p), color = "yellow") +
     geom_point(data=this_heat_waves_99p %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="green") + 

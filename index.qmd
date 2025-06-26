@@ -13,7 +13,7 @@ format:
     toc-depth: 5
 execute: 
   echo: false
-  cache: true
+  cache: false
 ---
 
 ```{r}
@@ -36,6 +36,8 @@ summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
 
 CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
 
+### Data Checking
+
 Number of station-readings available for each municipality during past week:
 
 ```{r}
@@ -43,6 +45,11 @@ Number of station-readings available for each municipality during past week:
 summary_readings_past_week %>% kableExtra::kbl() 
 
 ```
+
+### Heat Wave Tables
+
+
+#### 85th Percentile Threshold
 
 Summary of heat waves this year, based on two consecutive days at 85th percentile of daily minimum heat index:
 
@@ -52,6 +59,7 @@ heat_wave_summary %>% filter(threshold == 85, year(date)==year(today())) %>% kab
 
 ```
 
+#### 90th Percentile Threshold
 
 Summary of heat waves this year, based on two consecutive days at 90th percentile of daily minimum heat index:
 
@@ -62,6 +70,7 @@ heat_wave_summary %>% filter(threshold == 90, year(date)==year(today())) %>% kab
 ```
 
 
+#### 95th Percentile Threshold
 
 Summary of heat waves this year, based on two consecutive days at 95th percentile of daily minimum heat index:
 
@@ -72,14 +81,24 @@ heat_wave_summary %>% filter(threshold == 95, year(date)==year(today())) %>% kab
 ```
 
 
+#### 99th Percentile Threshold
+
 Summary of heat waves this year, based on two consecutive days at 99th percentile of daily minimum heat index:
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 99, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
 
 ```
 
+
+### Thresholds
 
 Heat wave thresholds:
 
