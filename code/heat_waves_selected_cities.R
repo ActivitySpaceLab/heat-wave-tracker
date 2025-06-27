@@ -158,6 +158,7 @@ heat_wave_dates_table = bind_rows(lapply(these_indicativos, function(this_indica
   }))
 }))
 
+# 2-day
 
 heat_waves_85p_2d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 2, threshold == "Hi_min_85p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
 
@@ -168,6 +169,22 @@ heat_waves_95p_2d = weather_daily %>% left_join(heat_wave_dates_table %>% filter
 heat_waves_99p_2d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 2, threshold == "Hi_min_99p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
 
 heat_waves_100p_2d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 2, threshold == "Hi_min_100p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+
+# 3-day
+
+heat_waves_85p_3d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 3, threshold == "Hi_min_85p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+heat_waves_90p_3d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 3, threshold == "Hi_min_90p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+heat_waves_95p_3d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 3, threshold == "Hi_min_95p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+heat_waves_99p_3d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 3, threshold == "Hi_min_99p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+heat_waves_100p_3d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 3, threshold == "Hi_min_100p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
+
+
+# 5-day
 
 
 heat_waves_85p_5d = weather_daily %>% left_join(heat_wave_dates_table %>% filter(n_days >= 5, threshold == "Hi_min_85p") %>% dplyr::select(indicativo, date) %>% mutate(heat_wave = TRUE)) %>% filter(heat_wave)
@@ -199,11 +216,14 @@ heat_wave_summary = bind_rows(
   heat_waves_90p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90, days = 2),
   heat_waves_95p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95, days = 2),
   heat_waves_100p_2d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100, days = 2),
+  heat_waves_85p_3d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 85, days = 3),
+  heat_waves_90p_3d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90, days = 3),
+  heat_waves_95p_3d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95, days = 3),
+  heat_waves_100p_3d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100, days = 3),
   heat_waves_85p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 85, days = 5),
   heat_waves_90p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 90, days = 5),
   heat_waves_95p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 95, days = 5),
   heat_waves_100p_5d %>% dplyr::select(date, indicativo, station_name, municipality_name) %>% mutate(threshold = 100, days = 5)
-  
   ) %>% as.data.table()
 
 fwrite(heat_wave_summary, "data/heat_wave_summary.csv.gz")
@@ -265,6 +285,19 @@ for(this_muni in these_munis){
   this_heat_waves_99p_2d = heat_waves_99p_2d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
   
   this_heat_waves_100p_2d = heat_waves_100p_2d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
+  
+  
+  
+  
+  this_heat_waves_85p_3d = heat_waves_85p_3d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
+  
+  this_heat_waves_90p_3d = heat_waves_90p_3d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
+  
+  this_heat_waves_95p_3d = heat_waves_95p_3d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
+  
+  this_heat_waves_99p_3d = heat_waves_99p_3d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
+  
+  this_heat_waves_100p_3d = heat_waves_100p_3d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
   
   
   this_heat_waves_85p_5d = heat_waves_85p_5d %>% filter(indicativo %in% unique(this_weather_daily$indicativo))
@@ -337,6 +370,40 @@ for(this_muni in these_munis){
     facet_wrap(.~station_name)
   
   ggsave(paste0("plots/recent_timeseries_", this_muni, ".png"), height = 6, width = 8)
+  
+  
+  # now 3-say spells
+  
+  
+  ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
+    geom_line() + 
+    geom_point(data=this_heat_waves_85p_3d, aes(x=date, y=Hi_min), color="#ff0000aa") + 
+    geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") +
+    geom_point(data=this_heat_waves_90p_3d, aes(x=date, y=Hi_min), color="#9900aaaa") + 
+    geom_hline(data = this_Hi_min_90p_table, aes(yintercept = Hi_min_90p), color = "purple") +
+    geom_point(data=this_heat_waves_95p_3d, aes(x=date, y=Hi_min), color="yellow") + 
+    geom_hline(data = this_Hi_min_95p_table, aes(yintercept = Hi_min_95p), color = "yellow") +
+    geom_point(data=this_heat_waves_99p_3d, aes(x=date, y=Hi_min), color="green") + 
+    geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
+    facet_wrap(.~station_name)
+  
+  ggsave(paste0("plots/full_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
+  
+  
+  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+    geom_point(data=this_heat_waves_85p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
+    geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
+    geom_point(data=this_heat_waves_90p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
+    geom_hline(data = this_Hi_min_90p_table, aes(yintercept = Hi_min_90p), color = "purple") +
+    geom_point(data=this_heat_waves_95p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="yellow") + 
+    geom_hline(data = this_Hi_min_95p_table, aes(yintercept = Hi_min_95p), color = "yellow") +
+    geom_point(data=this_heat_waves_99p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="green") + 
+    geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
+    facet_wrap(.~station_name)
+  
+  ggsave(paste0("plots/recent_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
+  
+  
   
   # now 5-day spells
   
