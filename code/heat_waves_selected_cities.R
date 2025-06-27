@@ -28,6 +28,8 @@ station_points = st_join(station_points, spain_munis)
 
 station_info = station_points %>% st_drop_geometry() %>% dplyr::select(indicativo = INDICATIVO, station_name = NOMBRE, municipality_name, PROVINCIA) %>% distinct()
 
+write_rds(station_info, file = "data/station_info.Rds")
+
 these_stations = station_info %>% filter(municipality_name %in% these_munis) %>% pull(indicativo)
 
 # Loading weather data ####
