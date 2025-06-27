@@ -4,7 +4,6 @@ date-modified: now
 author: 
   - name: John Palmer
     orcid: 0000-0002-2648-7860
-    email: john.palmer@upf.edu
     affiliations:
       - name: Universitat Pompeu Fabra
 format:
@@ -51,46 +50,118 @@ summary_readings_past_week %>% kableExtra::kbl()
 
 ### Heat Wave Tables
 
-
 #### 85th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 85th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 85th percentile of daily minimum heat index:
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 85, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
 #### 90th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 90th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 90th percentile of daily minimum heat index:
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 90, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
 
 #### 95th Percentile Threshold
 
-Summary of heat waves this year, based on two consecutive days at 95th percentile of daily minimum heat index:
+Summary of heat waves this year, based on two and five consecutive days at 95th percentile of daily minimum heat index:
+
+
+##### 2-day periods
 
 ```{r}
 
-heat_wave_summary %>% filter(threshold == 95, year(date)==year(today())) %>% kableExtra::kbl() 
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
 
 ```
 
-
-#### 99th Percentile Threshold
-
-Summary of heat waves this year, based on two consecutive days at 99th percentile of daily minimum heat index:
+##### 5-day periods
 
 ```{r}
 
-this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, year(date)==year(today()))
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+#### 99th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 99th percentile of daily minimum heat index:
+
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 2, year(date)==year(today()))
 
 if(nrow(this_heat_wave_summary)>0){
 this_heat_wave_summary %>% kableExtra::kbl() 
@@ -100,6 +171,19 @@ this_heat_wave_summary %>% kableExtra::kbl()
 
 ```
 
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 5, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
 
 ### Thresholds
 
@@ -113,32 +197,81 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 
 ## Barcelona
 
+### Threshold for at least 2 days
+
 ![Full Time Series](plots/full_timeseries_Barcelona.png)
 
 ![Recent Time Series](plots/recent_timeseries_Barcelona.png)
 
 
+### Threshold for at least 5 days
+
+![Full Time Series](plots/full_timeseries_5d_Barcelona.png)
+
+![Recent Time Series](plots/recent_timeseries_5d_Barcelona.png)
+
 ## Madrid
+
+
+### Threshold for at least 2 days
+
 
 ![Full Time Series](plots/full_timeseries_Madrid.png)
 ![Recent Time Series](plots/recent_timeseries_Madrid.png)
 
 
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_Madrid.png)
+
+
+![Recent Time Series](plots/recent_timeseries_5d_Madrid.png)
+
 ## Valencia
+
+### Threshold for at least 2 days
 
 ![Full Time Series](plots/full_timeseries_València.png)
 
-![Recent Time Series](plots/recent_timeseries_València)
+![Recent Time Series](plots/recent_timeseries_València.png)
+
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_València.png)
+
+
+
+![Recent Time Series](plots/recent_timeseries_5d_València.png)
 
 
 ## Sevilla
 
+
+### Threshold for at least 2 days
+
 ![Full Time Series](plots/full_timeseries_Sevilla.png)
 ![Recent Time Series](plots/recent_timeseries_Sevilla.png)
 
+### Threshold for at least 5 days
+
+
+
+![Full Time Series](plots/full_timeseries_5d_Sevilla.png)
+![Recent Time Series](plots/recent_timeseries_5d_Sevilla.png)
 
 ## Zaragoza
+
+### Threshold for at least 2 days
 
 ![Full Time Series](plots/full_timeseries_Zaragoza.png)
 
 ![Recent Time Series](plots/recent_timeseries_Zaragoza.png)
+
+### Threshold for at least 5 days
+
+
+![Full Time Series](plots/full_timeseries_5d_Zaragoza.png)
+
+![Recent Time Series](plots/recent_timeseries_5d_Zaragoza.png)
