@@ -85,6 +85,22 @@ this_heat_wave_summary %>% kableExtra::kbl()
 ```
 
 
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 4, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
 ##### 5-day periods
 
 ```{r}
@@ -136,6 +152,21 @@ this_heat_wave_summary %>% kableExtra::kbl()
 ```
 
 
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 4, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
 ##### 5-day periods
 
 ```{r}
@@ -177,6 +208,23 @@ this_heat_wave_summary %>% kableExtra::kbl()
 ```{r}
 
 this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 3, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 4, year(date)==year(today())) 
 
 if(nrow(this_heat_wave_summary)>0){
 this_heat_wave_summary %>% kableExtra::kbl() 
@@ -237,6 +285,23 @@ this_heat_wave_summary %>% kableExtra::kbl()
 
 ```
 
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 4, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
+
+
 ##### 5-day periods
 
 ```{r}
@@ -277,6 +342,15 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 ![Recent Time Series](plots/recent_timeseries_3d_Barcelona.png)
 
 
+
+### Threshold for at least 4 days
+
+![Full Time Series](plots/full_timeseries_4d_Barcelona.png)
+
+![Recent Time Series](plots/recent_timeseries_4d_Barcelona.png)
+
+
+
 ### Threshold for at least 5 days
 
 ![Full Time Series](plots/full_timeseries_5d_Barcelona.png)
@@ -300,6 +374,15 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 
 
 ![Recent Time Series](plots/recent_timeseries_3d_Madrid.png)
+
+
+### Threshold for at least 4 days
+
+
+![Full Time Series](plots/full_timeseries_4d_Madrid.png)
+
+
+![Recent Time Series](plots/recent_timeseries_4d_Madrid.png)
 
 ### Threshold for at least 5 days
 
@@ -327,6 +410,15 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 
 ![Recent Time Series](plots/recent_timeseries_3d_València.png)
 
+
+### Threshold for at least 4 days
+
+
+![Full Time Series](plots/full_timeseries_4d_València.png)
+
+
+
+![Recent Time Series](plots/recent_timeseries_4d_València.png)
 
 
 ### Threshold for at least 5 days
@@ -357,6 +449,16 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 ![Recent Time Series](plots/recent_timeseries_3d_Sevilla.png)
 
 
+
+### Threshold for at least 4 days
+
+
+
+![Full Time Series](plots/full_timeseries_4d_Sevilla.png)
+![Recent Time Series](plots/recent_timeseries_4d_Sevilla.png)
+
+
+
 ### Threshold for at least 5 days
 
 
@@ -379,6 +481,16 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 ![Full Time Series](plots/full_timeseries_3d_Zaragoza.png)
 
 ![Recent Time Series](plots/recent_timeseries_3d_Zaragoza.png)
+
+
+
+
+### Threshold for at least 4 days
+
+
+![Full Time Series](plots/full_timeseries_4d_Zaragoza.png)
+
+![Recent Time Series](plots/recent_timeseries_4d_Zaragoza.png)
 
 
 ### Threshold for at least 5 days
