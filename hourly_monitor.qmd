@@ -1,0 +1,146 @@
+---
+title: "Hourly Monitor of Selected Stations"
+date-modified: now
+author: 
+  - name: John Palmer
+    orcid: 0000-0002-2648-7860
+    affiliations:
+      - name: Universitat Pompeu Fabra
+format:
+  html:
+    toc: true
+    toc-depth: 5
+execute: 
+  echo: false
+  cache: false
+---
+
+```{r}
+#| label: load
+#| message: false
+
+library(tidyverse)
+library(kableExtra)
+library(data.table)
+library(lubridate)
+library(plotly)
+library(weathermetrics)
+
+these_stations = c("3126Y", "8416Y", "5790Y", "8416X", "3195",  "3129",  "9434P", "0201D", "5783") 
+
+D = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") %>% filter(idema %in% these_stations) %>% mutate(fint = with_tz(fint, "CET")) %>% pivot_wider(id_cols = c(fint, idema), names_from = measure, values_from = value) %>% mutate(date = as_date(fint)) %>% rename(indicativo = idema) %>% left_join(read_rds("data/station_info.Rds")) %>% mutate(Hi_max = heat.index(t = tamax, rh = hr, temperature.metric	= "celsius", output.metric = "celsius"), Hi_min = heat.index(t = tamin, rh = hr, temperature.metric	= "celsius", output.metric = "celsius"))
+
+
+
+```
+
+## Readings per day
+
+```{r}
+
+D %>% group_by(date, indicativo) %>% summarise(n = n(), .groups = "drop")%>% pivot_wider(id_cols = date, names_from = indicativo, values_from = n) %>% kableExtra::kbl() 
+
+```
+
+## Minimum Temperature
+
+
+```{r}
+
+this_municipality_name =unique(D$municipality_name)[1]
+
+for(this_municipality_name in unique(D$municipality_name)){
+
+  cat(this_municipality_name )
+  
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = tamin, color = station_name)) + geom_line() + geom_point()
+
+print(this_p)
+
+  }
+
+```
+
+
+## Maximum Temperature
+
+
+
+```{r}
+
+this_municipality_name =unique(D$municipality_name)[1]
+
+for(this_municipality_name in unique(D$municipality_name)){
+
+    cat(this_municipality_name )
+
+  
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = tamax, color = station_name)) + geom_line() + geom_point()
+
+print(this_p)
+
+  }
+
+```
+
+## Relative Humidity
+
+
+```{r}
+
+this_municipality_name =unique(D$municipality_name)[1]
+
+for(this_municipality_name in unique(D$municipality_name)){
+
+    cat(this_municipality_name )
+
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = hr, color = station_name)) + geom_line() + geom_point()
+
+print(this_p)
+
+  }
+
+```
+
+
+
+## Minimum Heat Index
+
+
+```{r}
+
+this_municipality_name =unique(D$municipality_name)[1]
+
+for(this_municipality_name in unique(D$municipality_name)){
+
+    cat(this_municipality_name )
+
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = Hi_min, color = station_name)) + geom_line() + geom_point()
+
+print(this_p)
+
+  }
+
+```
+
+
+
+
+## Maximum Heat Index
+
+
+```{r}
+
+this_municipality_name =unique(D$municipality_name)[1]
+
+for(this_municipality_name in unique(D$municipality_name)){
+
+    cat(this_municipality_name )
+
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = Hi_max, color = station_name)) + geom_line() + geom_point()
+
+print(this_p)
+
+  }
+
+```

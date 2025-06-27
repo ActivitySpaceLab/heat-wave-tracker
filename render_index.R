@@ -1,1 +1,1 @@
-rmarkdown::render('index.qmd')
+quarto::quarto_render('index.qmd')
