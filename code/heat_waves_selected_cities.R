@@ -375,7 +375,7 @@ for(this_muni in these_munis){
   
   ## 2-day spells ####
   
-  ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
+  this_p = ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
     geom_line() + 
     geom_point(data=this_heat_waves_85p_2d, aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") +
@@ -387,10 +387,10 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/full_timeseries_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/full_timeseries_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/full_timeseries_", this_muni, ".Rds"))
   
-  
-  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+  this_p = ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
     geom_point(data=this_heat_waves_85p_2d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p_2d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
@@ -401,12 +401,12 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/recent_timeseries_", this_muni, ".png"), height = 6, width = 8)
-  
+  ggsave(this_p, file = paste0("plots/recent_timeseries_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/recent_timeseries_", this_muni, ".Rds"))
   
   ## 3-say spells ####
   
-  ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
+ this_p = ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
     geom_line() + 
     geom_point(data=this_heat_waves_85p_3d, aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") +
@@ -418,10 +418,10 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/full_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/full_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/full_timeseries_3d_", this_muni, ".Rds"))
   
-  
-  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+  this_p = ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
     geom_point(data=this_heat_waves_85p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p_3d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
@@ -432,13 +432,13 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/recent_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
-  
+  ggsave(this_p, file = paste0("plots/recent_timeseries_3d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/recent_timeseries_3d_", this_muni, ".Rds"))
   
   
   ## 4-say spells ####
   
-  ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
+  this_p = ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
     geom_line() + 
     geom_point(data=this_heat_waves_85p_4d, aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") +
@@ -450,10 +450,10 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/full_timeseries_4d_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/full_timeseries_4d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/full_timeseries_4d_", this_muni, ".Rds"))
   
-  
-  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+  this_p = ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
     geom_point(data=this_heat_waves_85p_4d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p_4d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
@@ -464,13 +464,13 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/recent_timeseries_4d_", this_muni, ".png"), height = 6, width = 8)
-  
+  ggsave(this_p, file = paste0("plots/recent_timeseries_4d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/recent_timeseries_4d_", this_muni, ".Rds"))
   
   ## 5-day spells ####
   
   
-  ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
+  this_p = ggplot(this_weather_daily, aes(x=date, y=Hi_min)) + 
     geom_line() + 
     geom_point(data=this_heat_waves_85p_5d, aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") +
@@ -482,10 +482,10 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/full_timeseries_5d_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/full_timeseries_5d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/full_timeseries_5d_", this_muni, ".Rds"))  
   
-  
-  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+  this_p = ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
     geom_point(data=this_heat_waves_85p_5d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#ff0000aa") + 
     geom_hline(data = this_Hi_min_85p_table, aes(yintercept = Hi_min_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p_5d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_min), color="#9900aaaa") + 
@@ -496,13 +496,13 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_min_99p_table, aes(yintercept = Hi_min_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/recent_timeseries_5d_", this_muni, ".png"), height = 6, width = 8)
-  
+  ggsave(this_p, file = paste0("plots/recent_timeseries_5d_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/recent_timeseries_5d_", this_muni, ".Rds"))
   
   
   # now maximums
   
-  ggplot(this_weather_daily, aes(x=date, y=Hi_max)) + 
+  this_p = ggplot(this_weather_daily, aes(x=date, y=Hi_max)) + 
     geom_line() + 
     geom_point(data=this_heat_waves_85p_max_2d, aes(x=date, y=Hi_max), color="#ff0000aa") + 
     geom_hline(data = this_Hi_max_85p_table, aes(yintercept = Hi_max_85p), color = "red") +
@@ -514,10 +514,10 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_max_99p_table, aes(yintercept = Hi_max_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/full_timeseries_maximums_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/full_timeseries_maximums_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/full_timeseries_maximums_", this_muni, ".Rds"))
   
-  
-  ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
+  this_p = ggplot(this_weather_daily %>% filter(date >= today()-120, date < today()), aes(x=date, y=Hi_min))+ geom_line() + geom_line(aes(x=date, y=Hi_max), color="pink") +
     geom_point(data=this_heat_waves_85p_max_2d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_max), color="#ff0000aa") + 
     geom_hline(data = this_Hi_max_85p_table, aes(yintercept = Hi_max_85p), color = "red") + 
     geom_point(data=this_heat_waves_90p_max_2d %>% filter(year(date) == year(today())), aes(x=date, y=Hi_max), color="#9900aaaa") + 
@@ -528,6 +528,7 @@ for(this_muni in these_munis){
     geom_hline(data = this_Hi_max_99p_table, aes(yintercept = Hi_max_99p), color = "green") +
     facet_wrap(.~station_name)
   
-  ggsave(paste0("plots/recent_timeseries_maximums_", this_muni, ".png"), height = 6, width = 8)
+  ggsave(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".png"), height = 6, width = 8)
+  write_rds(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".Rds"))
   
 }
