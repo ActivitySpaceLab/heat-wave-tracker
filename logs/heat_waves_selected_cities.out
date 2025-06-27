@@ -1,0 +1,147 @@
+
+R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # Title ####
+> # For detecting and plotting heatwaves. 
+> 
+> rm(list=ls())
+> 
+> # Dependencies ####
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.2.1
+✔ purrr     0.3.5     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+Warning messages:
+1: package ‘tidyr’ was built under R version 4.1.2 
+2: package ‘purrr’ was built under R version 4.1.2 
+> library(lubridate)
+> library(data.table)
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:lubridate’:
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+The following object is masked from ‘package:purrr’:
+
+    transpose
+
+> library(tidyverse)
+> library(weathermetrics)
+> library(sf)
+Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1; sf_use_s2() is TRUE
+> library(gridExtra)
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+> 
+> 
+> # Selected cities ####
+> these_munis = c("Barcelona", "Madrid", "València", "Zaragoza", "Sevilla")
+> 
+> # Spatial data on stations ####
+> SPAIN_CRS = 25830
+> 
+> station_points = st_read("~/research/SpainTiger/data/cartography/1da1315b/Estaciones_Completas.shp") %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/b29c8d56/Estaciones_Termometricas.shp")) %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/2aa58725/Estaciones_Automaticas.shp")) %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/8892d9c9/Estaciones_Pluviometricas.shp")) %>% st_transform(SPAIN_CRS)
+Reading layer `Estaciones_Completas' from data source 
+  `/home/usuaris/j.palmer/research/SpainTiger/data/cartography/1da1315b/Estaciones_Completas.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 111 features and 9 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -17.8889 ymin: 27.81892 xmax: 4.215601 ymax: 43.56696
+Geodetic CRS:  ETRS89
+Reading layer `Estaciones_Termometricas' from data source 
+  `/home/usuaris/j.palmer/research/SpainTiger/data/cartography/b29c8d56/Estaciones_Termometricas.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 975 features and 9 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -15.54334 ymin: 27.91111 xmax: 4.316994 ymax: 43.67333
+Geodetic CRS:  ETRS89
+Reading layer `Estaciones_Automaticas' from data source 
+  `/home/usuaris/j.palmer/research/SpainTiger/data/cartography/2aa58725/Estaciones_Automaticas.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 852 features and 9 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -18.115 ymin: 27.66666 xmax: 4.086429 ymax: 43.78615
+Geodetic CRS:  ETRS89
+Reading layer `Estaciones_Pluviometricas' from data source 
+  `/home/usuaris/j.palmer/research/SpainTiger/data/cartography/8892d9c9/Estaciones_Pluviometricas.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 2362 features and 9 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -18.03113 ymin: 27.64222 xmax: 4.316994 ymax: 43.67333
+Geodetic CRS:  ETRS89
+> 
+> spain_munis = st_read("~/research/SpainTiger/data/cartography/SIGLIM_Publico_INSPIRE/SHP_ETRS89/recintos_municipales_inspire_peninbal_etrs89/recintos_municipales_inspire_peninbal_etrs89.shp") %>% st_transform(SPAIN_CRS) %>% filter(NATLEVNAME == "Municipio") %>% dplyr::select(municipality_name = NAMEUNIT, NATCODE)
+Reading layer `recintos_municipales_inspire_peninbal_etrs89' from data source 
+  `/home/usuaris/j.palmer/research/SpainTiger/data/cartography/SIGLIM_Publico_INSPIRE/SHP_ETRS89/recintos_municipales_inspire_peninbal_etrs89/recintos_municipales_inspire_peninbal_etrs89.shp' 
+  using driver `ESRI Shapefile'
+Simple feature collection with 8129 features and 9 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -9.301516 ymin: 35.17045 xmax: 4.327785 ymax: 43.79238
+Geodetic CRS:  ETRS89
+> 
+> station_points = st_join(station_points, spain_munis)
+> 
+> station_info = station_points %>% st_drop_geometry() %>% dplyr::select(indicativo = INDICATIVO, station_name = NOMBRE, municipality_name, PROVINCIA) %>% distinct()
+> 
+> these_stations = station_info %>% filter(municipality_name %in% these_munis) %>% pull(indicativo)
+> 
+> # Loading weather data ####
+> 
+> weather_daily = fread("~/research/realtime-weather-spain/data/spain_weather_daily_historical.csv.gz") %>% filter(indicativo %in% these_stations) %>% mutate(date = as_date(date))
+> 
+> # adding latest realtime weather
+> weather_realtime = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz")  %>% filter(idema %in% these_stations) %>% mutate(fint = with_tz(fint, "CET")) %>% pivot_wider(id_cols = c(fint, idema), names_from = measure, values_from = value) %>% mutate(date = as_date(fint)) %>% rename(indicativo = idema)
+> 
+> n_per_day = weather_realtime %>% group_by(date, indicativo) %>% summarise(n = n(), .groups = "drop")
+> 
+> weather_realtime = weather_realtime %>% left_join(n_per_day) %>% filter(n ==24) 
+Joining with `by = join_by(indicativo, date)`
+> 
+> if(nrow(weather_realtime)>0){
++   weather_realtime %>% group_by(date, indicativo) %>% summarise(TX = max(tamax), TN = min(tamin), HRX = max(hr), HRN = min(hr), .groups = "drop") %>% filter(!date %in% weather_daily$date) %>% mutate(date = as_date(date))
++ 
++   weather_daily = rbindlist(list(weather_daily, weather_realtime))
++ }
+Error in rbindlist(list(weather_daily, weather_realtime)) : 
+  Item 2 has 7 columns, inconsistent with item 1 which has 6 columns. To fill missing columns use fill=TRUE.
+Execution halted
