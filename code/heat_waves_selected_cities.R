@@ -42,7 +42,7 @@ n_per_day = weather_realtime %>% group_by(date, indicativo) %>% summarise(n = n(
 weather_realtime = weather_realtime %>% left_join(n_per_day) %>% filter(n ==24) 
 
 if(nrow(weather_realtime)>0){
-  weather_realtime %>% group_by(date, indicativo) %>% summarise(TX = max(tamax), TN = min(tamin), HRX = max(hr), HRN = min(hr), .groups = "drop") %>% filter(!date %in% weather_daily$date) %>% mutate(date = as_date(date))
+  weather_realtime = weather_realtime %>% group_by(date, indicativo) %>% summarise(TX = max(tamax), TN = min(tamin), HRX = max(hr), HRN = min(hr), .groups = "drop") %>% filter(!date %in% weather_daily$date) %>% mutate(date = as_date(date))
 
   weather_daily = rbindlist(list(weather_daily, weather_realtime))
 }
