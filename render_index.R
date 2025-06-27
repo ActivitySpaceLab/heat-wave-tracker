@@ -1,1 +1,1 @@
-rmarkdown::render('reports/index.qmd')
+rmarkdown::render('index.qmd')

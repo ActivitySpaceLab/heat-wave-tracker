@@ -4,7 +4,6 @@ date-modified: now
 author: 
   - name: John Palmer
     orcid: 0000-0002-2648-7860
-    email: john.palmer@upf.edu
     affiliations:
       - name: Universitat Pompeu Fabra
 format:
@@ -235,7 +234,7 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 
 ![Full Time Series](plots/full_timeseries_València.png)
 
-![Recent Time Series](plots/recent_timeseries_València)
+![Recent Time Series](plots/recent_timeseries_València.png)
 
 ### Threshold for at least 5 days
 
@@ -243,7 +242,8 @@ Hi_min_thresholds_table %>% kableExtra::kbl()
 ![Full Time Series](plots/full_timeseries_5d_València.png)
 
 
-![Recent Time Series](plots/recent_timeseries_5d_València)
+
+![Recent Time Series](plots/recent_timeseries_5d_València.png)
 
 
 ## Sevilla
