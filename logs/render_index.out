@@ -17,10 +17,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> rmarkdown::render('reports/index.qmd')
-Error in abs_path(input) : The file 'reports/index.qmd' does not exist.
-Calls: <Anonymous> -> setwd -> dirname -> abs_path
-In addition: Warning message:
-In normalizePath(x, winslash = winslash, mustWork = must_work) :
-  path[1]="reports/index.qmd": No such file or directory
+> quarto::quarto_render('index.qmd')
+Error in find_quarto() : Unable to find quarto command line tools.
+Calls: <Anonymous> -> find_quarto
 Execution halted
