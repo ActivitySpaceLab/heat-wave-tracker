@@ -1,13 +1,11 @@
 
-R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
-Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -18,6 +16,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > quarto::quarto_render('hourly_monitor.qmd')
-Error in find_quarto() : Unable to find quarto command line tools.
-Calls: <Anonymous> -> find_quarto
+Error in loadNamespace(x) : there is no package called ‘quarto’
+Calls: loadNamespace -> withRestarts -> withOneRestart -> doWithOneRestart
 Execution halted
