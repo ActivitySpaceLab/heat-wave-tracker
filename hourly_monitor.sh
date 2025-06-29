@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # making sure gdal path is correct
-export PATH=/home/soft/gdal-2.3.2/bin/:$PATH
-export LD_LIBRARY_PATH=/home/soft/gdal-2.3.2/lib/:$LD_LIBRARY_PATH
+# FOR CEAB CLUSTER ONLY - TEMP OFF
+# export PATH=/home/soft/gdal-2.3.2/bin/:$PATH
+# export LD_LIBRARY_PATH=/home/soft/gdal-2.3.2/lib/:$LD_LIBRARY_PATH
 
 # starting in project directory
 cd ~/research/heat-wave-tracker
@@ -10,10 +11,13 @@ cd ~/research/heat-wave-tracker
 # pull in any pending commits
 git pull origin main
 
-/home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore code/hourly_monitor.R logs/hourly_monitor.out 
+# FOR CEAB CLUSTER ONLY - TEMP OFF
+# /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore code/hourly_monitor.R logs/hourly_monitor.out 
+R CMD BATCH --no-save --no-restore code/hourly_monitor.R logs/hourly_monitor.out 
 
-/home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore render_hourly_monitor.R logs/render_hourly_monitor.out 
-
+# FOR CEAB CLUSTER ONLY - TEMP OFF
+# /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore render_hourly_monitor.R logs/render_hourly_monitor.out 
+R CMD BATCH --no-save --no-restore render_hourly_monitor.R logs/render_hourly_monitor.out 
 
 # Commit and push the log files from this latest run
 git add --all
