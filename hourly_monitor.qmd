@@ -36,7 +36,7 @@ D = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") %>% fil
 
 ## Readings per day
 
-Note: This report was last modified at `r now()`.
+Note: This report was last modified at `r with_tz(now(), "CET")`.
 
 ```{r}
 
