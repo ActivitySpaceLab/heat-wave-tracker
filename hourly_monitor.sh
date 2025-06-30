@@ -6,12 +6,12 @@
 # export LD_LIBRARY_PATH=/home/soft/gdal-2.3.2/lib/:$LD_LIBRARY_PATH
 
 # starting in project directory
-cd ~/research/heat-wave-tracker
+cd /home/palmer/research/heat-wave-tracker
 
 # pull in any pending commits
 git pull origin main
 
-source ~/.profile
+source /home/palmer/.profile
 
 # FOR CEAB CLUSTER ONLY - TEMP OFF
 # /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore code/hourly_monitor.R logs/hourly_monitor.out 
