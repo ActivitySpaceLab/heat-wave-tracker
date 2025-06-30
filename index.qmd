@@ -37,7 +37,7 @@ summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
 
 CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
 
-Note: This report was last modified at `r now()`.
+Note: This report was last modified at `r with_tz(now(), "CET")`.
 
 ### Data Checking
 
