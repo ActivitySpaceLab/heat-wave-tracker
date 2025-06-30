@@ -11,7 +11,7 @@ cd ~/research/heat-wave-tracker
 # pull in any pending commits
 git pull origin main
 
-source(".profile")
+source ~/.profile
 
 # FOR CEAB CLUSTER ONLY - TEMP OFF
 # /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore code/heat_waves_selected_cities.R logs/heat_waves_selected_cities.out 
