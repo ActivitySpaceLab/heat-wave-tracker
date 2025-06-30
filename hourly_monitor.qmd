@@ -36,6 +36,8 @@ D = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") %>% fil
 
 ## Readings per day
 
+Note: This report was last modified at `r now()`.
+
 ```{r}
 
 D %>% group_by(date, indicativo) %>% summarise(n = n(), .groups = "drop")%>% pivot_wider(id_cols = date, names_from = indicativo, values_from = n) %>% kableExtra::kbl() 
