@@ -1,1 +1,70 @@
-Fatal error: cannot open file 'code/hourly_monitor.R': No such file or directory
+
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
+> quarto::quarto_render('hourly_monitor.qmd')
+[31m
+
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+3/15                  
+4/15 [unnamed-chunk-2]
+5/15                  
+6/15 [unnamed-chunk-3]
+7/15                  
+8/15 [unnamed-chunk-4]
+9/15                  
+10/15 [unnamed-chunk-5]
+11/15                  
+12/15 [unnamed-chunk-6]
+13/15                  
+14/15 [unnamed-chunk-7]
+15/15                  
+[31moutput file: hourly_monitor.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: hourly_monitor.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 5
+  variables: {}
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Hourly Monitor of Selected Stations
+  date-modified: now
+  author:
+    - name: John Palmer
+      orcid: 0000-0002-2648-7860
+      affiliations:
+        - name: Universitat Pompeu Fabra
+  
+Output created: hourly_monitor.html
+
+> 
+> proc.time()
+   user  system elapsed 
+ 16.694   1.054  17.298 
