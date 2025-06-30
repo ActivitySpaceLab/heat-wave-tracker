@@ -20,9 +20,9 @@ these_munis = c("Barcelona", "Madrid", "València", "Zaragoza", "Sevilla")
 # Spatial data on stations ####
 SPAIN_CRS = 25830
 
-station_points = st_read("~/research/SpainTiger/data/cartography/1da1315b/Estaciones_Completas.shp") %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/b29c8d56/Estaciones_Termometricas.shp")) %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/2aa58725/Estaciones_Automaticas.shp")) %>% bind_rows(st_read("~/research/SpainTiger/data/cartography/8892d9c9/Estaciones_Pluviometricas.shp")) %>% st_transform(SPAIN_CRS)
+station_points = st_read("data/cartography/1da1315b/Estaciones_Completas.shp") %>% bind_rows(st_read("data/cartography/b29c8d56/Estaciones_Termometricas.shp")) %>% bind_rows(st_read("data/cartography/2aa58725/Estaciones_Automaticas.shp")) %>% bind_rows(st_read("data/cartography/8892d9c9/Estaciones_Pluviometricas.shp")) %>% st_transform(SPAIN_CRS)
 
-spain_munis = st_read("~/research/SpainTiger/data/cartography/SIGLIM_Publico_INSPIRE/SHP_ETRS89/recintos_municipales_inspire_peninbal_etrs89/recintos_municipales_inspire_peninbal_etrs89.shp") %>% st_transform(SPAIN_CRS) %>% filter(NATLEVNAME == "Municipio") %>% dplyr::select(municipality_name = NAMEUNIT, NATCODE)
+spain_munis = st_read("data/cartography/SIGLIM_Publico_INSPIRE/SHP_ETRS89/recintos_municipales_inspire_peninbal_etrs89/recintos_municipales_inspire_peninbal_etrs89.shp") %>% st_transform(SPAIN_CRS) %>% filter(NATLEVNAME == "Municipio") %>% dplyr::select(municipality_name = NAMEUNIT, NATCODE)
 
 station_points = st_join(station_points, spain_munis)
 
