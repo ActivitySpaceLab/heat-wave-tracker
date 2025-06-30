@@ -15,7 +15,7 @@ source /home/palmer/.profile
 
 # FOR CEAB CLUSTER ONLY - TEMP OFF
 # /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore code/hourly_monitor.R logs/hourly_monitor.out 
-R CMD BATCH --no-save --no-restore hourly_monitor.R logs/hourly_monitor.out 
+R CMD BATCH --no-save --no-restore render_hourly_monitor.R logs/hourly_monitor.out 
 
 # FOR CEAB CLUSTER ONLY - TEMP OFF
 # /home/soft/R-4.1.0/bin/R CMD BATCH --no-save --no-restore render_hourly_monitor.R logs/render_hourly_monitor.out 
