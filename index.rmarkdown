@@ -1,0 +1,673 @@
+---
+title: "Heat Wave Monitor"
+date-modified: now
+author: 
+  - name: John Palmer
+    orcid: 0000-0002-2648-7860
+    affiliations:
+      - name: Universitat Pompeu Fabra
+format:
+  html:
+    toc: true
+    toc-depth: 5
+execute: 
+  echo: false
+  cache: false
+---
+
+```{r}
+#| label: load
+#| message: false
+
+library(tidyverse)
+library(kableExtra)
+library(data.table)
+library(lubridate)
+library(plotly)
+
+heat_wave_summary = fread("data/heat_wave_summary.csv.gz")
+
+Hi_min_thresholds_table = fread("data/Hi_min_thresholds_table.csv.gz")
+
+summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
+
+```
+
+## Summary
+
+CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
+
+Note: This report was last modified at `r now()`.
+
+### Data Checking
+
+Number of station-readings available for each municipality during past week:
+
+```{r}
+
+summary_readings_past_week %>% kableExtra::kbl() 
+
+```
+
+### Heat Wave Tables
+
+#### 85th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 85th percentile of daily minimum heat index:
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+##### 3-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 3, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 4, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 85, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+#### 90th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 90th percentile of daily minimum heat index:
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 3-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 3, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 4, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 90, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+#### 95th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 95th percentile of daily minimum heat index:
+
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 2, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 3-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 3, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 4, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 95, days == 5, year(date)==year(today())) 
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+
+```
+#### 99th Percentile Threshold
+
+Summary of heat waves this year, based on two and five consecutive days at 99th percentile of daily minimum heat index:
+
+
+##### 2-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 2, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
+
+
+
+##### 3-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 3, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
+
+
+
+##### 4-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 4, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
+
+
+##### 5-day periods
+
+```{r}
+
+this_heat_wave_summary = heat_wave_summary %>% filter(threshold == 99, days == 5, year(date)==year(today()))
+
+if(nrow(this_heat_wave_summary)>0){
+this_heat_wave_summary %>% kableExtra::kbl() 
+} else{
+  cat("No heat waves yet at this threshold.")
+}
+
+```
+
+### Thresholds
+
+Heat wave thresholds:
+
+```{r}
+
+Hi_min_thresholds_table %>% kableExtra::kbl() 
+
+```
+
+## Barcelona
+
+### Threshold for at least 2 days
+
+```{r}
+
+read_rds("plots/full_timeseries_Barcelona.Rds") %>% ggplotly()
+
+```
+
+
+```{r}
+
+read_rds("plots/recent_timeseries_Barcelona.Rds") %>% ggplotly()
+
+```
+
+
+### Threshold for at least 3 days
+
+
+
+```{r}
+
+read_rds("plots/full_timeseries_3d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_3d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 4 days
+
+```{r}
+
+read_rds("plots/full_timeseries_4d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_4d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 5 days
+
+```{r}
+
+read_rds("plots/full_timeseries_5d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_5d_Barcelona.Rds") %>% ggplotly()
+
+```
+
+
+## Madrid
+
+
+### Threshold for at least 2 days
+
+
+```{r}
+
+read_rds("plots/full_timeseries_Madrid.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_Madrid.Rds") %>% ggplotly()
+
+```
+
+
+
+
+### Threshold for at least 3 days
+
+
+```{r}
+
+read_rds("plots/full_timeseries_3d_Madrid.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_3d_Madrid.Rds") %>% ggplotly()
+
+```
+
+
+### Threshold for at least 4 days
+
+```{r}
+
+read_rds("plots/full_timeseries_4d_Madrid.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_4d_Madrid.Rds") %>% ggplotly()
+
+```
+
+
+### Threshold for at least 5 days
+
+```{r}
+
+read_rds("plots/full_timeseries_5d_Madrid.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_5d_Madrid.Rds") %>% ggplotly()
+
+```
+
+
+
+## Valencia
+
+### Threshold for at least 2 days
+
+```{r}
+
+read_rds("plots/full_timeseries_València.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_València.Rds") %>% ggplotly()
+
+```
+
+
+
+
+### Threshold for at least 3 days
+
+```{r}
+
+read_rds("plots/full_timeseries_3d_València.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_3d_València.Rds") %>% ggplotly()
+
+```
+
+
+
+
+
+### Threshold for at least 4 days
+
+```{r}
+
+read_rds("plots/full_timeseries_4d_València.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_4d_València.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 5 days
+
+```{r}
+
+read_rds("plots/full_timeseries_5d_València.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_5d_València.Rds") %>% ggplotly()
+
+```
+
+
+
+## Sevilla
+
+
+### Threshold for at least 2 days
+
+```{r}
+
+read_rds("plots/full_timeseries_Sevilla.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_Sevilla.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 3 days
+
+
+```{r}
+
+read_rds("plots/full_timeseries_3d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_3d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+
+
+
+### Threshold for at least 4 days
+
+```{r}
+
+read_rds("plots/full_timeseries_4d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_4d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+
+
+
+
+### Threshold for at least 5 days
+
+
+```{r}
+
+read_rds("plots/full_timeseries_5d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_5d_Sevilla.Rds") %>% ggplotly()
+
+```
+
+
+## Zaragoza
+
+### Threshold for at least 2 days
+
+```{r}
+
+read_rds("plots/full_timeseries_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 3 days
+
+```{r}
+
+read_rds("plots/full_timeseries_3d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_3d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+
+
+
+
+
+### Threshold for at least 4 days
+
+```{r}
+
+read_rds("plots/full_timeseries_4d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_4d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+
+
+### Threshold for at least 5 days
+
+```{r}
+
+read_rds("plots/full_timeseries_5d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+```{r}
+
+read_rds("plots/recent_timeseries_5d_Zaragoza.Rds") %>% ggplotly()
+
+```
+
+
+

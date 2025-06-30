@@ -15,7 +15,16 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
 > quarto::quarto_render('hourly_monitor.qmd')
-Error in loadNamespace(x) : there is no package called ‘quarto’
-Calls: loadNamespace -> withRestarts -> withOneRestart -> doWithOneRestart
+Error in `find_quarto()` at quarto/R/render.R:93:3:
+! Quarto command-line tools path not found!
+Please make sure you have installed and added Quarto to your PATH or set the
+QUARTO_PATH environment variable.
+Backtrace:
+    ▆
+ 1. └─quarto::quarto_render("hourly_monitor.qmd")
+ 2.   └─quarto:::find_quarto() at quarto/R/render.R:93:3
+ 3.     └─cli::cli_abort(quarto_not_found_msg) at quarto/R/quarto.R:31:5
+ 4.       └─rlang::abort(...) at cli/R/rlang.R:45:3
 Execution halted

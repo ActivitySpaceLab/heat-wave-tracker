@@ -126,49 +126,5 @@ processing file: index.qmd
 104/119 [unnamed-chunk-52]
 105/119                   
 106/119 [unnamed-chunk-53]
-107/119                   
-108/119 [unnamed-chunk-54]
-109/119                   
-110/119 [unnamed-chunk-55]
-111/119                   
-112/119 [unnamed-chunk-56]
-113/119                   
-114/119 [unnamed-chunk-57]
-115/119                   
-116/119 [unnamed-chunk-58]
-117/119                   
-118/119 [unnamed-chunk-59]
-119/119                   
-[31moutput file: index.knit.md
 
-[39m[1mpandoc [22m
-  to: html
-  output-file: index.html
-  standalone: true
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  toc: true
-  toc-depth: 5
-  variables: {}
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  date-format: long
-  lang: en
-  title: Heat Wave Monitor
-  date-modified: now
-  author:
-    - name: John Palmer
-      orcid: 0000-0002-2648-7860
-      affiliations:
-        - name: Universitat Pompeu Fabra
-  
-Output created: index.html
-
-> 
-> proc.time()
-   user  system elapsed 
- 32.682   2.008  34.029 
+Execution halted
