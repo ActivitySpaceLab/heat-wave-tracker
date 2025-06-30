@@ -1,13 +1,11 @@
 
-R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
-Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -17,7 +15,116 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
 > quarto::quarto_render('index.qmd')
-Error in find_quarto() : Unable to find quarto command line tools.
-Calls: <Anonymous> -> find_quarto
+[31m
+
+processing file: index.qmd
+[39m1/119                   
+2/119 [load]            
+3/119                   
+4/119 [unnamed-chunk-2] 
+5/119                   
+6/119 [unnamed-chunk-3] 
+7/119                   
+8/119 [unnamed-chunk-4] 
+9/119                   
+10/119 [unnamed-chunk-5] 
+11/119                   
+12/119 [unnamed-chunk-6] 
+13/119                   
+14/119 [unnamed-chunk-7] 
+15/119                   
+16/119 [unnamed-chunk-8] 
+17/119                   
+18/119 [unnamed-chunk-9] 
+19/119                   
+20/119 [unnamed-chunk-10]
+21/119                   
+22/119 [unnamed-chunk-11]
+23/119                   
+24/119 [unnamed-chunk-12]
+25/119                   
+26/119 [unnamed-chunk-13]
+27/119                   
+28/119 [unnamed-chunk-14]
+29/119                   
+30/119 [unnamed-chunk-15]
+31/119                   
+32/119 [unnamed-chunk-16]
+33/119                   
+34/119 [unnamed-chunk-17]
+35/119                   
+36/119 [unnamed-chunk-18]
+37/119                   
+38/119 [unnamed-chunk-19]
+39/119                   
+40/119 [unnamed-chunk-20]
+41/119                   
+42/119 [unnamed-chunk-21]
+43/119                   
+44/119 [unnamed-chunk-22]
+45/119                   
+46/119 [unnamed-chunk-23]
+47/119                   
+48/119 [unnamed-chunk-24]
+49/119                   
+50/119 [unnamed-chunk-25]
+51/119                   
+52/119 [unnamed-chunk-26]
+53/119                   
+54/119 [unnamed-chunk-27]
+55/119                   
+56/119 [unnamed-chunk-28]
+57/119                   
+58/119 [unnamed-chunk-29]
+59/119                   
+60/119 [unnamed-chunk-30]
+61/119                   
+62/119 [unnamed-chunk-31]
+63/119                   
+64/119 [unnamed-chunk-32]
+65/119                   
+66/119 [unnamed-chunk-33]
+67/119                   
+68/119 [unnamed-chunk-34]
+69/119                   
+70/119 [unnamed-chunk-35]
+71/119                   
+72/119 [unnamed-chunk-36]
+73/119                   
+74/119 [unnamed-chunk-37]
+75/119                   
+76/119 [unnamed-chunk-38]
+77/119                   
+78/119 [unnamed-chunk-39]
+79/119                   
+80/119 [unnamed-chunk-40]
+81/119                   
+82/119 [unnamed-chunk-41]
+83/119                   
+84/119 [unnamed-chunk-42]
+85/119                   
+86/119 [unnamed-chunk-43]
+87/119                   
+88/119 [unnamed-chunk-44]
+89/119                   
+90/119 [unnamed-chunk-45]
+91/119                   
+92/119 [unnamed-chunk-46]
+93/119                   
+94/119 [unnamed-chunk-47]
+95/119                   
+96/119 [unnamed-chunk-48]
+97/119                   
+98/119 [unnamed-chunk-49]
+99/119                   
+100/119 [unnamed-chunk-50]
+101/119                   
+102/119 [unnamed-chunk-51]
+103/119                   
+104/119 [unnamed-chunk-52]
+105/119                   
+106/119 [unnamed-chunk-53]
+
 Execution halted
