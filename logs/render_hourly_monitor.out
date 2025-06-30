@@ -17,14 +17,54 @@ Type 'q()' to quit R.
 
 - Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
 > quarto::quarto_render('hourly_monitor.qmd')
-Error in `find_quarto()` at quarto/R/render.R:93:3:
-! Quarto command-line tools path not found!
-Please make sure you have installed and added Quarto to your PATH or set the
-QUARTO_PATH environment variable.
-Backtrace:
-    ▆
- 1. └─quarto::quarto_render("hourly_monitor.qmd")
- 2.   └─quarto:::find_quarto() at quarto/R/render.R:93:3
- 3.     └─cli::cli_abort(quarto_not_found_msg) at quarto/R/quarto.R:31:5
- 4.       └─rlang::abort(...) at cli/R/rlang.R:45:3
-Execution halted
+[31m
+
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+3/15                  
+4/15 [unnamed-chunk-2]
+5/15                  
+6/15 [unnamed-chunk-3]
+7/15                  
+8/15 [unnamed-chunk-4]
+9/15                  
+10/15 [unnamed-chunk-5]
+11/15                  
+12/15 [unnamed-chunk-6]
+13/15                  
+14/15 [unnamed-chunk-7]
+15/15                  
+[31moutput file: hourly_monitor.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: hourly_monitor.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 5
+  variables: {}
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Hourly Monitor of Selected Stations
+  date-modified: now
+  author:
+    - name: John Palmer
+      orcid: 0000-0002-2648-7860
+      affiliations:
+        - name: Universitat Pompeu Fabra
+  
+Output created: hourly_monitor.html
+
+> 
+> proc.time()
+   user  system elapsed 
+ 16.835   1.044  17.359 
