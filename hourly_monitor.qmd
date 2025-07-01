@@ -25,6 +25,7 @@ library(data.table)
 library(lubridate)
 library(plotly)
 library(weathermetrics)
+library(R.utils)
 
 these_stations = c("3126Y", "8416Y", "5790Y", "8416X", "3195",  "3129",  "9434P", "0201D", "5783") 
 
