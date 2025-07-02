@@ -687,18 +687,8 @@ character(0)
 +   write_rds(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".Rds"))
 +   
 + }
-Warning messages:
-1: Removed 1 row containing missing values or values outside the scale range
-(`geom_line()`). 
-2: Removed 1 row containing missing values or values outside the scale range
-(`geom_line()`). 
-3: Removed 1 row containing missing values or values outside the scale range
-(`geom_line()`). 
-4: Removed 1 row containing missing values or values outside the scale range
-(`geom_line()`). 
-5: Removed 1 row containing missing values or values outside the scale range
-(`geom_line()`). 
+There were 35 warnings (use warnings() to see them)
 > 
 > proc.time()
    user  system elapsed 
- 48.348   2.368  51.185 
+ 41.311   1.820  43.518 
