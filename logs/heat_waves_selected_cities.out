@@ -194,7 +194,7 @@ Joining with `by = join_by(indicativo, date)`
 > weather_daily = weather_daily %>% filter(!indicativo %in% bad_stations)
 > 
 > unique(weather_daily$indicativo)
-[1] "3126Y" "8416X" "9434P" "3195"  "5790Y" "8416Y" "0201D" "3129"  "5783" 
+[1] "8416X" "9434P" "0201D" "3195"  "5790Y" "8416Y" "5783"  "3126Y" "3129" 
 > 
 > Hi_min_85p_table = weather_daily_thresholds %>% group_by(indicativo, station_name) %>% summarise(Hi_min_85p = as.numeric(quantile(Hi_min, probs = 0.85, na.rm=TRUE)), n = sum(!is.na(Hi_min)), .groups = "drop")
 > 
@@ -390,16 +390,16 @@ Joining with `by = join_by(date, indicativo)`
 > 
 > # quick check of this year's heat waves
 > heat_waves_85p_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Zaragoza"  "Madrid"    "Sevilla"   "Barcelona" "València" 
+[1] "Zaragoza"  "Barcelona" "Madrid"    "Sevilla"   "València" 
 > 
 > heat_waves_90p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Sevilla"  "Zaragoza" "Madrid"  
+[1] "Zaragoza" "Sevilla"  "Madrid"  
 > 
 > heat_waves_95p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Zaragoza" "Sevilla"  "Madrid"  
 > 
 > heat_waves_99p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Sevilla"  "Zaragoza"
+[1] "Zaragoza" "Sevilla" 
 > 
 > heat_waves_100p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 character(0)
@@ -420,10 +420,10 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Madrid"    "Sevilla"   "València"  "Barcelona" "Zaragoza" 
+[1] "Zaragoza"  "Barcelona" "Sevilla"   "València"  "Madrid"   
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Barcelona" "Madrid"    "Zaragoza"  "València" 
+[1] "Barcelona" "València"  "Sevilla"   "Madrid"    "Zaragoza" 
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Barcelona" "Madrid"   
@@ -691,4 +691,4 @@ There were 35 warnings (use warnings() to see them)
 > 
 > proc.time()
    user  system elapsed 
- 41.311   1.820  43.518 
+ 43.627   2.041  46.130 
