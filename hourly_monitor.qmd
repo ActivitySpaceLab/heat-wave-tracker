@@ -31,6 +31,7 @@ these_stations = c("3126Y", "8416Y", "5790Y", "8416X", "3195",  "3129",  "9434P"
 
 D = fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") %>% filter(idema %in% these_stations) %>% mutate(fint = with_tz(fint, "CET")) %>% pivot_wider(id_cols = c(fint, idema), names_from = measure, values_from = value) %>% mutate(date = as_date(fint)) %>% rename(indicativo = idema) %>% left_join(read_rds("data/station_info.Rds")) %>% mutate(Hi_max = heat.index(t = tamax, rh = hr, temperature.metric	= "celsius", output.metric = "celsius"), Hi_min = heat.index(t = tamin, rh = hr, temperature.metric	= "celsius", output.metric = "celsius"))
 
+Hi_min_thresholds_table = fread("data/Hi_min_thresholds_table.csv.gz")
 
 
 ```
@@ -118,7 +119,12 @@ for(this_municipality_name in unique(D$municipality_name)){
 
     cat(this_municipality_name )
 
-this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = Hi_min, color = station_name)) + geom_line() + geom_point()
+  these_indicativos = D %>% filter(municipality_name == this_municipality_name) %>% pull(indicativo) %>% unique
+  
+  this_Hi_min_thresholds_table = Hi_min_thresholds_table %>% filter(indicativo %in% these_indicativos) 
+  
+this_p = D %>% filter(municipality_name == this_municipality_name) %>% ggplot(aes(x = fint, y = Hi_min)) + geom_line() + geom_point() + geom_hline(data = this_Hi_min_thresholds_table, aes(yintercept = Hi_min_95p), color = "yellow") +
+    facet_wrap(.~station_name)
 
 print(this_p)
 
