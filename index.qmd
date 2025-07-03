@@ -25,7 +25,7 @@ library(data.table)
 library(lubridate)
 library(plotly)
 
-heat_wave_summary = fread("data/heat_wave_summary.csv.gz")
+heat_wave_summary = fread("data/heat_wave_summary.csv.gz") %>% setorder(threshold, days, municipality_name, station_name, date)
 
 Hi_min_thresholds_table = fread("data/Hi_min_thresholds_table.csv.gz")
 
@@ -34,8 +34,6 @@ summary_readings_past_week = fread("data/summary_readings_past_week.csv.gz")
 ```
 
 ## Summary
-
-CAUTION: There is a gap in the dates because the historical data has not yet caught up with our first recording of the realtime data.
 
 Note: This report was last modified at `r with_tz(now(), "CET")`.
 
