@@ -26,45 +26,18 @@ processing file: hourly_monitor.qmd
 4/15 [unnamed-chunk-2]
 5/15                  
 6/15 [unnamed-chunk-3]
-7/15                  
-8/15 [unnamed-chunk-4]
-9/15                  
-10/15 [unnamed-chunk-5]
-11/15                  
-12/15 [unnamed-chunk-6]
-13/15                  
-14/15 [unnamed-chunk-7]
-15/15                  
-[31moutput file: hourly_monitor.knit.md
-
-[39m[1mpandoc [22m
-  to: html
-  output-file: hourly_monitor.html
-  standalone: true
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  toc: true
-  toc-depth: 5
-  variables: {}
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  date-format: long
-  lang: en
-  title: Hourly Monitor of Selected Stations
-  date-modified: now
-  author:
-    - name: John Palmer
-      orcid: 0000-0002-2648-7860
-      affiliations:
-        - name: Universitat Pompeu Fabra
-  
-Output created: hourly_monitor.html
-
-> 
-> proc.time()
-   user  system elapsed 
- 21.965   1.439  23.173 
+Error in `quarto::quarto_render()`:
+✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+Backtrace:
+    ▆
+ 1. └─quarto::quarto_render("hourly_monitor.qmd")
+ 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
+ 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
+ 4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 6.           └─value[[3L]](cond)
+ 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
+ 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
+Execution halted
