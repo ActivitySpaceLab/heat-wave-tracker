@@ -42,7 +42,7 @@ Backtrace:
 
 
 Quitting from lines 19-37 [load] (hourly_monitor.qmd)
-Execution halted
+[39m[31mExecution halted
 [39mError in `quarto::quarto_render()`:
 ✖ Error running quarto cli.
 Caused by error:
