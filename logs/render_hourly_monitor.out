@@ -27,12 +27,12 @@ processing file: hourly_monitor.qmd
 Backtrace:
      ▆
   1. ├─... %>% ...
-  2. ├─dplyr::mutate(..[39m[31m.) at magrittr/R/pipe.R:136:3
+  2. ├─dplyr::mutate(...) at magrittr/R/pipe.R:136:3
   3. ├─dplyr::left_join(., read_rds("data/station_info.Rds")) at dplyr/R/mutate.R:146:3
   4. ├─dplyr::rename(., indicativo = idema) at dplyr/R/join.R:300:3
   5. ├─dplyr::mutate(., date = as_date(fint)) at dplyr/R/rename.R:64:3
   6. ├─tidyr::pivot_wider(...) at dplyr/R/mutate.R:146:3
-  7. ├─dplyr::mutate(., fint = with_tz(fint, "CET"[39m[31m)) at tidyr/R/pivot-wide.R:175:3
+  7. ├─dplyr::mutate(., fint = with_tz(fint, "CET")) at tidyr/R/pivot-wide.R:175:3
   8. ├─dplyr::filter(., idema %in% these_stations) at dplyr/R/mutate.R:146:3
   9. └─data.table::fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") at dplyr/R/filter.R:119:3
  10.   ├─R.utils::decompressFile(...) at data.table/R/fread.R:117:7
