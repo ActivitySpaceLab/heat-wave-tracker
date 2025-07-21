@@ -22,8 +22,8 @@ Type 'q()' to quit R.
 processing file: hourly_monitor.qmd
 [39m1/15                  
 2/15 [load]           
-[31mError in `readBin()`:
-! error reading from the connection
+[31mError in `fread()` at dplyr/R/filter.R:119:3:
+! File '~/research/realtime-weather-spain/data/spain_weather.csv.gz' does not exist or is non-readable. getwd()=='/home/palmer/research/heat-wave-tracker'
 Backtrace:
      ▆
   1. ├─... %>% ...
@@ -35,9 +35,8 @@ Backtrace:
   7. ├─dplyr::mutate(., fint = with_tz(fint, "CET")) at tidyr/R/pivot-wide.R:175:3
   8. ├─dplyr::filter(., idema %in% these_stations) at dplyr/R/mutate.R:146:3
   9. └─data.table::fread("~/research/realtime-weather-spain/data/spain_weather.csv.gz") at dplyr/R/filter.R:119:3
- 10.   ├─R.utils::decompressFile(...) at data.table/R/fread.R:117:7
- 11.   └─R.utils::decompressFile.default(...) at staging/1/R.utils:1:14
- 12.     └─base::readBin(inn, what = raw(0L), size = 1L, n = BFR.SIZE) at R.utils/R/compressFile.R:266:5
+ 10.   └─data.table:::stopf(...) at data.table/R/fread.R:90:5
+ 11.     └─data.table:::raise_condition(...) at data.table/R/translation.R:21:3
 [39m[31m
 
 
