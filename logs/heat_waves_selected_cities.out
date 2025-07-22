@@ -194,7 +194,7 @@ Joining with `by = join_by(indicativo, date)`
 > weather_daily = weather_daily %>% filter(!indicativo %in% bad_stations)
 > 
 > unique(weather_daily$indicativo)
-[1] "3126Y" "8416X" "9434P" "3195"  "5790Y" "8416Y" "0201D" "3129"  "5783" 
+[1] "5783"  "9434P" "8416X" "5790Y" "8416Y" "0201D" "3195"  "3129"  "3126Y"
 > 
 > Hi_min_85p_table = weather_daily_thresholds %>% group_by(indicativo, station_name) %>% summarise(Hi_min_85p = as.numeric(quantile(Hi_min, probs = 0.85, na.rm=TRUE)), n = sum(!is.na(Hi_min)), .groups = "drop")
 > 
@@ -390,10 +390,10 @@ Joining with `by = join_by(date, indicativo)`
 > 
 > # quick check of this year's heat waves
 > heat_waves_85p_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Madrid"    "Barcelona" "València"  "Zaragoza"  "Sevilla"  
+[1] "Zaragoza"  "València"  "Barcelona" "Madrid"    "Sevilla"  
 > 
 > heat_waves_90p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Barcelona" "València"  "Sevilla"   "Madrid"    "Zaragoza" 
+[1] "Zaragoza"  "Barcelona" "València"  "Sevilla"   "Madrid"   
 > 
 > heat_waves_95p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Barcelona" "València"  "Sevilla"   "Zaragoza"  "Madrid"   
@@ -420,10 +420,10 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Madrid"    "Zaragoza"  "Sevilla"   "Barcelona" "València" 
+[1] "Barcelona" "Madrid"    "Zaragoza"  "Sevilla"   "València" 
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Zaragoza"  "Madrid"    "Sevilla"   "Barcelona" "València" 
+[1] "Barcelona" "Zaragoza"  "Madrid"    "Sevilla"   "València" 
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "València"  "Madrid"    "Barcelona"
@@ -687,8 +687,18 @@ character(0)
 +   write_rds(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".Rds"))
 +   
 + }
-There were 15 warnings (use warnings() to see them)
+Warning messages:
+1: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+2: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+3: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+4: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+5: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
 > 
 > proc.time()
    user  system elapsed 
- 50.444   2.314  53.244 
+ 47.851   2.191  50.474 
