@@ -390,10 +390,10 @@ Joining with `by = join_by(date, indicativo)`
 > 
 > # quick check of this year's heat waves
 > heat_waves_85p_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "València"  "Barcelona" "Zaragoza"  "Madrid"    "Sevilla"  
+[1] "Barcelona" "València"  "Zaragoza"  "Madrid"    "Sevilla"  
 > 
 > heat_waves_90p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "València"  "Barcelona" "Zaragoza"  "Sevilla"   "Madrid"   
+[1] "Barcelona" "València"  "Zaragoza"  "Sevilla"   "Madrid"   
 > 
 > heat_waves_95p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Barcelona" "València"  "Sevilla"   "Zaragoza"  "Madrid"   
@@ -409,10 +409,10 @@ character(0)
 [1] "Barcelona" "València"  "Sevilla"   "Zaragoza"  "Madrid"   
 > 
 > heat_waves_90p_5d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "València"  "Sevilla"   "Barcelona" "Zaragoza" 
+[1] "Barcelona" "València"  "Sevilla"   "Zaragoza" 
 > 
 > heat_waves_95p_5d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "València"  "Barcelona" "Sevilla"   "Zaragoza" 
+[1] "Barcelona" "València"  "Sevilla"   "Zaragoza" 
 > 
 > heat_waves_99p_5d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
 character(0)
@@ -420,10 +420,10 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Barcelona" "Madrid"    "Zaragoza"  "Sevilla"   "València" 
+[1] "València"  "Barcelona" "Madrid"    "Zaragoza"  "Sevilla"  
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Barcelona" "Zaragoza"  "Madrid"    "Sevilla"   "València" 
+[1] "València"  "Barcelona" "Zaragoza"  "Madrid"    "Sevilla"  
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "València"  "Madrid"    "Barcelona"
@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 52.232   2.501  55.261 
+ 48.822   2.292  51.596 
