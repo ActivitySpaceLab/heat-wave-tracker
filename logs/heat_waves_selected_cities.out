@@ -194,7 +194,7 @@ Joining with `by = join_by(indicativo, date)`
 > weather_daily = weather_daily %>% filter(!indicativo %in% bad_stations)
 > 
 > unique(weather_daily$indicativo)
-[1] "5783"  "5790Y" "3126Y" "0201D" "8416Y" "3129"  "8416X" "9434P" "3195" 
+[1] "8416X" "9434P" "3195"  "3126Y" "8416Y" "5790Y" "5783"  "3129"  "0201D"
 > 
 > Hi_min_85p_table = weather_daily_thresholds %>% group_by(indicativo, station_name) %>% summarise(Hi_min_85p = as.numeric(quantile(Hi_min, probs = 0.85, na.rm=TRUE)), n = sum(!is.na(Hi_min)), .groups = "drop")
 > 
@@ -420,7 +420,7 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Madrid"    "Barcelona" "València"  "Zaragoza" 
+[1] "Barcelona" "Sevilla"   "Madrid"    "València"  "Zaragoza" 
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Sevilla"   "València"  "Barcelona" "Zaragoza"  "Madrid"   
@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 52.337   2.432  55.299 
+ 48.630   2.222  51.356 
