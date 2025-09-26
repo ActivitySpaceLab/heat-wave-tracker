@@ -171,4 +171,4 @@ Output created: index.html
 > 
 > proc.time()
    user  system elapsed 
- 46.586   2.788  48.327 
+ 58.859   3.366  60.833 
