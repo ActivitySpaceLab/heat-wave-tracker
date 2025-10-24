@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 51.666   2.515  54.747 
+ 45.842   2.155  48.519 
