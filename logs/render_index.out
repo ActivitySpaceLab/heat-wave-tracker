@@ -32,18 +32,143 @@ processing file: index.qmd
 10/119 [unnamed-chunk-5] 
 11/119                   
 12/119 [unnamed-chunk-6] 
-Error in `quarto::quarto_render()`:
-✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-Backtrace:
-    ▆
- 1. └─quarto::quarto_render("index.qmd")
- 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
- 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
- 4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 6.           └─value[[3L]](cond)
- 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
- 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
-Execution halted
+13/119                   
+14/119 [unnamed-chunk-7] 
+15/119                   
+16/119 [unnamed-chunk-8] 
+17/119                   
+18/119 [unnamed-chunk-9] 
+19/119                   
+20/119 [unnamed-chunk-10]
+21/119                   
+22/119 [unnamed-chunk-11]
+23/119                   
+24/119 [unnamed-chunk-12]
+25/119                   
+26/119 [unnamed-chunk-13]
+27/119                   
+28/119 [unnamed-chunk-14]
+29/119                   
+30/119 [unnamed-chunk-15]
+31/119                   
+32/119 [unnamed-chunk-16]
+33/119                   
+34/119 [unnamed-chunk-17]
+35/119                   
+36/119 [unnamed-chunk-18]
+37/119                   
+38/119 [unnamed-chunk-19]
+39/119                   
+40/119 [unnamed-chunk-20]
+41/119                   
+42/119 [unnamed-chunk-21]
+43/119                   
+44/119 [unnamed-chunk-22]
+45/119                   
+46/119 [unnamed-chunk-23]
+47/119                   
+48/119 [unnamed-chunk-24]
+49/119                   
+50/119 [unnamed-chunk-25]
+51/119                   
+52/119 [unnamed-chunk-26]
+53/119                   
+54/119 [unnamed-chunk-27]
+55/119                   
+56/119 [unnamed-chunk-28]
+57/119                   
+58/119 [unnamed-chunk-29]
+59/119                   
+60/119 [unnamed-chunk-30]
+61/119                   
+62/119 [unnamed-chunk-31]
+63/119                   
+64/119 [unnamed-chunk-32]
+65/119                   
+66/119 [unnamed-chunk-33]
+67/119                   
+68/119 [unnamed-chunk-34]
+69/119                   
+70/119 [unnamed-chunk-35]
+71/119                   
+72/119 [unnamed-chunk-36]
+73/119                   
+74/119 [unnamed-chunk-37]
+75/119                   
+76/119 [unnamed-chunk-38]
+77/119                   
+78/119 [unnamed-chunk-39]
+79/119                   
+80/119 [unnamed-chunk-40]
+81/119                   
+82/119 [unnamed-chunk-41]
+83/119                   
+84/119 [unnamed-chunk-42]
+85/119                   
+86/119 [unnamed-chunk-43]
+87/119                   
+88/119 [unnamed-chunk-44]
+89/119                   
+90/119 [unnamed-chunk-45]
+91/119                   
+92/119 [unnamed-chunk-46]
+93/119                   
+94/119 [unnamed-chunk-47]
+95/119                   
+96/119 [unnamed-chunk-48]
+97/119                   
+98/119 [unnamed-chunk-49]
+99/119                   
+100/119 [unnamed-chunk-50]
+101/119                   
+102/119 [unnamed-chunk-51]
+103/119                   
+104/119 [unnamed-chunk-52]
+105/119                   
+106/119 [unnamed-chunk-53]
+107/119                   
+108/119 [unnamed-chunk-54]
+109/119                   
+110/119 [unnamed-chunk-55]
+111/119                   
+112/119 [unnamed-chunk-56]
+113/119                   
+114/119 [unnamed-chunk-57]
+115/119                   
+116/119 [unnamed-chunk-58]
+117/119                   
+118/119 [unnamed-chunk-59]
+119/119                   
+[31moutput file: index.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: index.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 5
+  variables: {}
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Heat Wave Monitor
+  date-modified: now
+  author:
+    - name: John Palmer
+      orcid: 0000-0002-2648-7860
+      affiliations:
+        - name: Universitat Pompeu Fabra
+  
+Output created: index.html
+
+> 
+> proc.time()
+   user  system elapsed 
+ 43.328   2.667  44.961 
