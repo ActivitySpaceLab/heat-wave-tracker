@@ -37,8 +37,3 @@ Backtrace:
  7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
  8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
 Execution halted
- tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 6.           └─value[[3L]](cond)
- 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
- 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
-Execution halted
