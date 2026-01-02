@@ -17,3 +17,28 @@ Type 'q()' to quit R.
 
 - Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
 > quarto::quarto_render('hourly_monitor.qmd')
+
+NOTE: Dependency discovery took 29 seconds during snapshot.
+Consider using .renvignore to ignore files, or switching to explicit snapshots.
+See `?renv::dependencies` for more information.
+
+[31m
+
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+Error in `quarto::quarto_render()`:
+✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+Backtrace:
+    ▆
+ 1. └─quarto::quarto_render("hourly_monitor.qmd")
+ 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
+ 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
+ 4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 6.           └─value[[3L]](cond)
+ 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
+ 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
+Execution halted

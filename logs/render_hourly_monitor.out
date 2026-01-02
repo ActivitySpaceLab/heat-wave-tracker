@@ -22,16 +22,6 @@ Type 'q()' to quit R.
 processing file: hourly_monitor.qmd
 [39m1/15                  
 2/15 [load]           
-Warning message:
-renv took longer than expected (120 seconds) to activate the sandbox.
-
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
-
-within an appropriate start-up .Renviron file.
-
-See `?renv::config` for more details. 
 Error in `quarto::quarto_render()`:
 ✖ Error running quarto cli.
 Caused by error:
