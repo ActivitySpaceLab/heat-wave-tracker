@@ -32,3 +32,4 @@ within an appropriate start-up .Renviron file.
 
 See `?renv::config` for more details. 
 > quarto::quarto_render('index.qmd')
+Killed
