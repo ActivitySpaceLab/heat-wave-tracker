@@ -31,7 +31,7 @@ The sandbox can be disabled by setting:
 within an appropriate start-up .Renviron file.
 
 See `?renv::config` for more details. 
-
-> quarto::quarto_render('hourly_monitor.qmd')
+Killed
+to::quarto_render('hourly_monitor.qmd')
 Killed
 
