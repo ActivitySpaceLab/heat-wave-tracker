@@ -15,27 +15,31 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
-
-NOTE: Dependency discovery took 160 seconds during snapshot.
-Consider using .renvignore to ignore files, or switching to explicit snapshots.
-See `?renv::dependencies` for more information.
-
-Warning message:
-renv took longer than expected (430 seconds) to activate the sandbox.
-
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
-
-within an appropriate start-up .Renviron file.
-
-See `?renv::config` for more details. 
-> # Title ####
-> # For detecting and plotting heatwaves. 
-> 
-> rm(list=ls())
-> 
-> # Dependencies ####
-> library(tidyverse)
-Killed
+Error in (function (err)  : Failed to parse 'renv.lock':
+Error writing to connection:  No space left on device
+Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
+Traceback (most recent calls last):
+20: source("renv/activate.R")
+19: withVisible(eval(ei, envir))
+18: eval(ei, envir)
+17: eval(ei, envir)
+16: local(...)
+15: eval.parent(substitute(eval(quote(expr), envir)))
+14: eval(expr, p)
+13: eval(expr, p)
+12: eval(quote(...), new.env())
+11: eval(quote(...), new.env())
+10: renv_bootstrap_exec(project, libpath, version)
+ 9: renv_bootstrap_load(project, libpath, version)
+ 8: renv::load(project)
+ 7: renv_lockfile_load(project)
+ 6: renv_lockfile_read(path)
+ 5: withCallingHandlers(json <- renv_json_read(text = contents), 
+        error = function(err) {
+            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
+        })
+ 4: renv_json_read(text = contents)
+ 3: stop(json)
+ 2: <condition-handler>(...)
+ 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
+Execution halted
