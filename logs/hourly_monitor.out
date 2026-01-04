@@ -18,16 +18,8 @@ Type 'q()' to quit R.
 Error in (function (err)  : Failed to parse 'renv.lock':
 Error writing to connection:  No space left on device
 Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
-In addition: Warning messages:
-1: In close.connection(con) :
-  Problem closing connection:  No space left on device
-2: In close.connection(con) :
-  Problem closing connection:  No space left on device
-3: In parse(rfile, keep.source = FALSE, srcfile = NULL)[[1L]] :
-  subscript out of bounds
-4: In close.connection(con) :
-  Problem closing connection:  No space left on device
-5: renv took longer than expected (740 seconds) to activate the sandbox.
+In addition: Warning message:
+renv took longer than expected (12 seconds) to activate the sandbox.
 
 The sandbox can be disabled by setting:
 
@@ -61,7 +53,17 @@ Traceback (most recent calls last):
  2: <condition-handler>(...)
  1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
 Execution halted
-   └─base::tryCatch(...) at quarto/R/quarto.R:51:3
+6: renv_lockfile_read(path)
+ 5: withCallingHandlers(json <- renv_json_read(text = contents), 
+        error = function(err) {
+            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
+        })
+ 4: renv_json_read(text = contents)
+ 3: stop(json)
+ 2: <condition-handler>(...)
+ 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
+[31mExecution halted
+[39marto/R/quarto.R:51:3
  4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
  5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
  6.           └─value[[3L]](cond)

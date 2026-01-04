@@ -18,6 +18,16 @@ Type 'q()' to quit R.
 Error in (function (err)  : Failed to parse 'renv.lock':
 Error writing to connection:  No space left on device
 Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
+In addition: Warning message:
+renv took longer than expected (12 seconds) to activate the sandbox.
+
+The sandbox can be disabled by setting:
+
+    RENV_CONFIG_SANDBOX_ENABLED = FALSE
+
+within an appropriate start-up .Renviron file.
+
+See `?renv::config` for more details. 
 Traceback (most recent calls last):
 20: source("renv/activate.R")
 19: withVisible(eval(ei, envir))
