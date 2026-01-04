@@ -63,7 +63,22 @@ Execution halted
  2: <condition-handler>(...)
  1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
 [31mExecution halted
-[39marto/R/quarto.R:51:3
+[39mError in (function (err)  : Failed to parse 'renv.lock':
+Error writing to connection:  No space left on device
+Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
+Execution halted
+Problem with running R found at /usr/lib/R/bin/Rscript to check environment configurations.
+Please check your installation of R.
+
+Error in `quarto::quarto_render()`:
+✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+Backtrace:
+    ▆
+ 1. └─quarto::quarto_render("hourly_monitor.qmd")
+ 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
+ 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
  4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
  5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
  6.           └─value[[3L]](cond)
