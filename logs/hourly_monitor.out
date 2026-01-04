@@ -18,16 +18,6 @@ Type 'q()' to quit R.
 Error in (function (err)  : Failed to parse 'renv.lock':
 Error writing to connection:  No space left on device
 Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
-In addition: Warning message:
-renv took longer than expected (12 seconds) to activate the sandbox.
-
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
-
-within an appropriate start-up .Renviron file.
-
-See `?renv::config` for more details. 
 Traceback (most recent calls last):
 20: source("renv/activate.R")
 19: withVisible(eval(ei, envir))
@@ -52,36 +42,4 @@ Traceback (most recent calls last):
  3: stop(json)
  2: <condition-handler>(...)
  1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-Execution halted
-6: renv_lockfile_read(path)
- 5: withCallingHandlers(json <- renv_json_read(text = contents), 
-        error = function(err) {
-            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-        })
- 4: renv_json_read(text = contents)
- 3: stop(json)
- 2: <condition-handler>(...)
- 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-[31mExecution halted
-[39mError in (function (err)  : Failed to parse 'renv.lock':
-Error writing to connection:  No space left on device
-Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
-Execution halted
-Problem with running R found at /usr/lib/R/bin/Rscript to check environment configurations.
-Please check your installation of R.
-
-Error in `quarto::quarto_render()`:
-✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-Backtrace:
-    ▆
- 1. └─quarto::quarto_render("hourly_monitor.qmd")
- 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
- 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
- 4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 6.           └─value[[3L]](cond)
- 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
- 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
 Execution halted
