@@ -15,31 +15,56 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-Error in (function (err)  : Failed to parse 'renv.lock':
-Error writing to connection:  No space left on device
-Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
-Traceback (most recent calls last):
-20: source("renv/activate.R")
-19: withVisible(eval(ei, envir))
-18: eval(ei, envir)
-17: eval(ei, envir)
-16: local(...)
-15: eval.parent(substitute(eval(quote(expr), envir)))
-14: eval(expr, p)
-13: eval(expr, p)
-12: eval(quote(...), new.env())
-11: eval(quote(...), new.env())
-10: renv_bootstrap_exec(project, libpath, version)
- 9: renv_bootstrap_load(project, libpath, version)
- 8: renv::load(project)
- 7: renv_lockfile_load(project)
- 6: renv_lockfile_read(path)
- 5: withCallingHandlers(json <- renv_json_read(text = contents), 
-        error = function(err) {
-            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-        })
- 4: renv_json_read(text = contents)
- 3: stop(json)
- 2: <condition-handler>(...)
- 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-Execution halted
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
+> quarto::quarto_render('hourly_monitor.qmd')
+[31m
+
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+3/15                  
+4/15 [unnamed-chunk-2]
+5/15                  
+6/15 [unnamed-chunk-3]
+7/15                  
+8/15 [unnamed-chunk-4]
+9/15                  
+10/15 [unnamed-chunk-5]
+11/15                  
+12/15 [unnamed-chunk-6]
+13/15                  
+14/15 [unnamed-chunk-7]
+15/15                  
+[31moutput file: hourly_monitor.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: hourly_monitor.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 5
+  variables: {}
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Hourly Monitor of Selected Stations
+  date-modified: now
+  author:
+    - name: John Palmer
+      orcid: 0000-0002-2648-7860
+      affiliations:
+        - name: Universitat Pompeu Fabra
+  
+Output created: hourly_monitor.html
+
+> 
+> proc.time()
+   user  system elapsed 
+ 18.064   1.354  19.663 
