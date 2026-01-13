@@ -15,31 +15,160 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-Error in (function (err)  : Failed to parse 'renv.lock':
-Error writing to connection:  No space left on device
-Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
-Traceback (most recent calls last):
-20: source("renv/activate.R")
-19: withVisible(eval(ei, envir))
-18: eval(ei, envir)
-17: eval(ei, envir)
-16: local(...)
-15: eval.parent(substitute(eval(quote(expr), envir)))
-14: eval(expr, p)
-13: eval(expr, p)
-12: eval(quote(...), new.env())
-11: eval(quote(...), new.env())
-10: renv_bootstrap_exec(project, libpath, version)
- 9: renv_bootstrap_load(project, libpath, version)
- 8: renv::load(project)
- 7: renv_lockfile_load(project)
- 6: renv_lockfile_read(path)
- 5: withCallingHandlers(json <- renv_json_read(text = contents), 
-        error = function(err) {
-            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-        })
- 4: renv_json_read(text = contents)
- 3: stop(json)
- 2: <condition-handler>(...)
- 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
-Execution halted
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
+> quarto::quarto_render('index.qmd')
+[31m
+
+processing file: index.qmd
+[39m1/119                   
+2/119 [load]            
+3/119                   
+4/119 [unnamed-chunk-2] 
+5/119                   
+6/119 [unnamed-chunk-3] 
+7/119                   
+8/119 [unnamed-chunk-4] 
+9/119                   
+10/119 [unnamed-chunk-5] 
+11/119                   
+12/119 [unnamed-chunk-6] 
+13/119                   
+14/119 [unnamed-chunk-7] 
+15/119                   
+16/119 [unnamed-chunk-8] 
+17/119                   
+18/119 [unnamed-chunk-9] 
+19/119                   
+20/119 [unnamed-chunk-10]
+21/119                   
+22/119 [unnamed-chunk-11]
+23/119                   
+24/119 [unnamed-chunk-12]
+25/119                   
+26/119 [unnamed-chunk-13]
+27/119                   
+28/119 [unnamed-chunk-14]
+29/119                   
+30/119 [unnamed-chunk-15]
+31/119                   
+32/119 [unnamed-chunk-16]
+33/119                   
+34/119 [unnamed-chunk-17]
+35/119                   
+36/119 [unnamed-chunk-18]
+37/119                   
+38/119 [unnamed-chunk-19]
+39/119                   
+40/119 [unnamed-chunk-20]
+41/119                   
+42/119 [unnamed-chunk-21]
+43/119                   
+44/119 [unnamed-chunk-22]
+45/119                   
+46/119 [unnamed-chunk-23]
+47/119                   
+48/119 [unnamed-chunk-24]
+49/119                   
+50/119 [unnamed-chunk-25]
+51/119                   
+52/119 [unnamed-chunk-26]
+53/119                   
+54/119 [unnamed-chunk-27]
+55/119                   
+56/119 [unnamed-chunk-28]
+57/119                   
+58/119 [unnamed-chunk-29]
+59/119                   
+60/119 [unnamed-chunk-30]
+61/119                   
+62/119 [unnamed-chunk-31]
+63/119                   
+64/119 [unnamed-chunk-32]
+65/119                   
+66/119 [unnamed-chunk-33]
+67/119                   
+68/119 [unnamed-chunk-34]
+69/119                   
+70/119 [unnamed-chunk-35]
+71/119                   
+72/119 [unnamed-chunk-36]
+73/119                   
+74/119 [unnamed-chunk-37]
+75/119                   
+76/119 [unnamed-chunk-38]
+77/119                   
+78/119 [unnamed-chunk-39]
+79/119                   
+80/119 [unnamed-chunk-40]
+81/119                   
+82/119 [unnamed-chunk-41]
+83/119                   
+84/119 [unnamed-chunk-42]
+85/119                   
+86/119 [unnamed-chunk-43]
+87/119                   
+88/119 [unnamed-chunk-44]
+89/119                   
+90/119 [unnamed-chunk-45]
+91/119                   
+92/119 [unnamed-chunk-46]
+93/119                   
+94/119 [unnamed-chunk-47]
+95/119                   
+96/119 [unnamed-chunk-48]
+97/119                   
+98/119 [unnamed-chunk-49]
+99/119                   
+100/119 [unnamed-chunk-50]
+101/119                   
+102/119 [unnamed-chunk-51]
+103/119                   
+104/119 [unnamed-chunk-52]
+105/119                   
+106/119 [unnamed-chunk-53]
+107/119                   
+108/119 [unnamed-chunk-54]
+109/119                   
+110/119 [unnamed-chunk-55]
+111/119                   
+112/119 [unnamed-chunk-56]
+113/119                   
+114/119 [unnamed-chunk-57]
+115/119                   
+116/119 [unnamed-chunk-58]
+117/119                   
+118/119 [unnamed-chunk-59]
+119/119                   
+[31moutput file: index.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: index.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  toc-depth: 5
+  variables: {}
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Heat Wave Monitor
+  date-modified: now
+  author:
+    - name: John Palmer
+      orcid: 0000-0002-2648-7860
+      affiliations:
+        - name: Universitat Pompeu Fabra
+  
+Output created: index.html
+
+> 
+> proc.time()
+   user  system elapsed 
+ 42.194   2.359  43.753 
