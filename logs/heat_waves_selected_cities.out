@@ -687,8 +687,8 @@ character(0)
 +   write_rds(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".Rds"))
 +   
 + }
-There were 50 or more warnings (use warnings() to see the first 50)
+There were 15 warnings (use warnings() to see them)
 > 
 > proc.time()
    user  system elapsed 
- 66.113   3.190  69.942 
+ 62.082   3.227  65.978 
