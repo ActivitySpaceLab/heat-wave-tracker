@@ -67,4 +67,4 @@ Output created: hourly_monitor.html
 > 
 > proc.time()
    user  system elapsed 
- 33.664   2.012  34.877 
+ 33.149   2.108  34.480 
