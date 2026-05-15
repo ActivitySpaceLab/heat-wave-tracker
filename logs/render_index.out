@@ -15,49 +15,31 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
-> quarto::quarto_render('index.qmd')
-[31m
-
-processing file: index.qmd
-[39m1/119                   
-2/119 [load]            
-3/119                   
-4/119 [unnamed-chunk-2] 
-5/119                   
-6/119 [unnamed-chunk-3] 
-7/119                   
-8/119 [unnamed-chunk-4] 
-9/119                   
-10/119 [unnamed-chunk-5] 
-11/119                   
-12/119 [unnamed-chunk-6] 
-13/119                   
-14/119 [unnamed-chunk-7] 
-15/119                   
-16/119 [unnamed-chunk-8] 
-17/119                   
-18/119 [unnamed-chunk-9] 
-19/119                   
-20/119 [unnamed-chunk-10]
-21/119                   
-22/119 [unnamed-chunk-11]
-23/119                   
-24/119 [unnamed-chunk-12]
-25/119                   
-26/119 [unnamed-chunk-13]
-Error in `quarto::quarto_render()`:
-✖ Error running quarto cli.
-Caused by error:
-! System command 'quarto' failed
-Backtrace:
-    ▆
- 1. └─quarto::quarto_render("index.qmd")
- 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quarto_bin) at quarto/R/render.R:191:3
- 3.     └─base::tryCatch(...) at quarto/R/quarto.R:51:3
- 4.       └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 5.         └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 6.           └─value[[3L]](cond)
- 7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
- 8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
+Error in (function (err)  : Failed to parse 'renv.lock':
+Error writing to connection:  No space left on device
+Calls: source ... renv_lockfile_read -> withCallingHandlers -> renv_json_read
+Traceback (most recent calls last):
+20: source("renv/activate.R")
+19: withVisible(eval(ei, envir))
+18: eval(ei, envir)
+17: eval(ei, envir)
+16: local(...)
+15: eval.parent(substitute(eval(quote(expr), envir)))
+14: eval(expr, p)
+13: eval(expr, p)
+12: eval(quote(...), new.env())
+11: eval(quote(...), new.env())
+10: renv_bootstrap_exec(project, libpath, version)
+ 9: renv_bootstrap_load(project, libpath, version)
+ 8: renv::load(project)
+ 7: renv_lockfile_load(project)
+ 6: renv_lockfile_read(path)
+ 5: withCallingHandlers(json <- renv_json_read(text = contents), 
+        error = function(err) {
+            stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
+        })
+ 4: renv_json_read(text = contents)
+ 3: stop(json)
+ 2: <condition-handler>(...)
+ 1: stop("Failed to parse 'renv.lock':\n", conditionMessage(err))
 Execution halted
