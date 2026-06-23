@@ -390,7 +390,7 @@ Joining with `by = join_by(date, indicativo)`
 > 
 > # quick check of this year's heat waves
 > heat_waves_85p_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "València"  "Zaragoza"  "Madrid"    "Barcelona" "Sevilla"  
+[1] "Madrid"    "València"  "Zaragoza"  "Barcelona" "Sevilla"  
 > 
 > heat_waves_90p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Sevilla"   "Barcelona" "València"  "Madrid"    "Zaragoza" 
@@ -420,13 +420,13 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Madrid"    "València"  "Barcelona" "Zaragoza" 
+[1] "Madrid"    "Sevilla"   "València"  "Barcelona" "Zaragoza" 
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "València"  "Madrid"    "Barcelona" "Sevilla"   "Zaragoza" 
+[1] "Madrid"    "València"  "Barcelona" "Sevilla"   "Zaragoza" 
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "València"  "Madrid"    "Barcelona" "Sevilla"  
+[1] "Madrid"    "València"  "Barcelona" "Sevilla"  
 > 
 > heat_waves_99p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Madrid"    "Barcelona"
@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 59.092   3.563  63.173 
+ 63.508   3.729  67.817 
