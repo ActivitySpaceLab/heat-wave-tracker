@@ -420,7 +420,7 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Madrid"    "Zaragoza"  "València"  "Barcelona"
+[1] "Madrid"    "Sevilla"   "Zaragoza"  "València"  "Barcelona"
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Sevilla"   "Madrid"    "Zaragoza"  "València"  "Barcelona"
@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 59.360   3.771  63.699 
+ 61.625   3.780  66.013 
