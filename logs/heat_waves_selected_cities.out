@@ -390,10 +390,10 @@ Joining with `by = join_by(date, indicativo)`
 > 
 > # quick check of this year's heat waves
 > heat_waves_85p_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Zaragoza"  "Madrid"    "València"  "Barcelona"
+[1] "Madrid"    "Sevilla"   "Zaragoza"  "València"  "Barcelona"
 > 
 > heat_waves_90p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Zaragoza"  "Madrid"    "Barcelona" "València" 
+[1] "Madrid"    "Sevilla"   "Zaragoza"  "Barcelona" "València" 
 > 
 > heat_waves_95p_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Sevilla"   "Zaragoza"  "Barcelona" "València"  "Madrid"   
@@ -423,7 +423,7 @@ character(0)
 [1] "Madrid"    "Sevilla"   "Zaragoza"  "València"  "Barcelona"
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Sevilla"   "Madrid"    "Zaragoza"  "València"  "Barcelona"
+[1] "Madrid"    "Sevilla"   "Zaragoza"  "València"  "Barcelona"
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Sevilla"   "Madrid"    "València"  "Barcelona"
@@ -687,8 +687,18 @@ character(0)
 +   write_rds(this_p, file = paste0("plots/recent_timeseries_maximums_", this_muni, ".Rds"))
 +   
 + }
-There were 20 warnings (use warnings() to see them)
+Warning messages:
+1: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+2: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+3: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+4: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
+5: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`). 
 > 
 > proc.time()
    user  system elapsed 
- 60.124   3.736  64.420 
+ 59.722   3.738  63.988 
