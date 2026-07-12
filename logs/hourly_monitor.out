@@ -16,13 +16,19 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 - Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
-> quarto::quarto_render('hourly_monitor.qmd')
-[31m
+Warning message:
+renv took longer than expected (45 seconds) to activate the sandbox.
 
-processing file: hourly_monitor.qmd
-[39m1/15                  
-2/15 [load]           
-Error in `quarto::quarto_render()`:
+The sandbox can be disabled by setting:
+
+    RENV_CONError in `quarto::quarto_render()`:
+✖ Error running quarto cli.
+Caused by error:
+! System command 'quarto' failed
+Backtrace:
+    ▆
+ 1. └─quarto::quarto_render("hourly_monitor.qmd")
+ 2.   └─quarto:::quarto_run(args, echo = TRUE, quarto_bin = quaError in `quarto::quarto_render()`:
 ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
@@ -37,3 +43,4 @@ Backtrace:
  7.             └─cli::cli_abort(msg, call = .call, parent = e) at quarto/R/quarto.R:58:7
  8.               └─rlang::abort(...) at cli/R/rlang.R:45:3
 Execution halted
+on halted
