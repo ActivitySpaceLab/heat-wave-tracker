@@ -420,10 +420,10 @@ character(0)
 > 
 > 
 > heat_waves_85p_max_2d %>% filter(date >= as_date("2025-01-01"))%>% pull(municipality_name) %>% unique()
-[1] "Barcelona" "Madrid"    "Sevilla"   "Zaragoza"  "València" 
+[1] "Zaragoza"  "Sevilla"   "Barcelona" "Madrid"    "València" 
 > 
 > heat_waves_90p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
-[1] "Barcelona" "Sevilla"   "Zaragoza"  "Madrid"    "València" 
+[1] "Zaragoza"  "Sevilla"   "Barcelona" "Madrid"    "València" 
 > 
 > heat_waves_95p_max_2d %>% filter(date >= as_date("2025-01-01")) %>% pull(municipality_name) %>% unique()
 [1] "Barcelona" "Sevilla"   "Zaragoza"  "Madrid"    "València" 
@@ -701,4 +701,4 @@ Warning messages:
 > 
 > proc.time()
    user  system elapsed 
- 49.757   2.344  52.583 
+ 48.646   2.418  51.619 
