@@ -15,3 +15,26 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
+
+NOTE: Dependency discovery took 12 seconds during snapshot.
+Consider using .renvignore to ignore files, or switching to explicit snapshots.
+See `?renv::dependencies` for more information.
+
+Warning message:
+renv took longer than expected (41 seconds) to activate the sandbox.
+
+The sandbox can be disabled by setting:
+
+    RENV_CONFIG_SANDBOX_ENABLED = FALSE
+
+within an appropriate start-up .Renviron file.
+
+See `?renv::config` for more details. 
+> # Title ####
+> # For detecting and plotting heatwaves. 
+> 
+> rm(list=ls())
+> 
+> # Dependencies ####
+> library(tidyverse)
