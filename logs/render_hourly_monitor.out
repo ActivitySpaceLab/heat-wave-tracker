@@ -21,9 +21,8 @@ NOTE: Dependency discovery took 96 seconds during snapshot.
 Consider using .renvignore to ignore files, or switching to explicit snapshots.
 See `?renv::dependencies` for more information.
 
-
 Warning message:
-renv took longer than expected (34 seconds) to activate the sandbox.
+renv took longer than expected (140 seconds) to activate the sandbox.
 
 The sandbox can be disabled by setting:
 
@@ -35,3 +34,7 @@ See `?renv::config` for more details.
 > quarto::quarto_render('hourly_monitor.qmd')
 
 Killed
+ependency discovery took 54 seconds during snapshot.
+Consider using .renvignore to ignore files, or switching to explicit snapshots.
+See `?renv::dependencies` for more information.
+
