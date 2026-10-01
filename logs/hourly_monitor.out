@@ -16,13 +16,17 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 - Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
-
-NOTE: Dependency discovery took 380 seconds during snapshot.
-Consider using .renvignore to ignore files, or switching to explicit snapshots.
-See `?renv::dependencies` for more information.
-
 Warning message:
-renv took longer than expected (240 seconds) to activate the sandbox.
+renv took longer than expected (72 seconds) to activate the sandbox.
+
+The sandbox can be disabled by setting:
+
+    RENV_CONFIG_SANDBOX_ENABLED = FALSE
+
+within an appropriate start-up .Renviron file.
+
+See `?renv::config`[31mWarning message> quarto::quarto_render('hourly_monitor.qmd')
+to activate the sandbox.
 
 The sandbox can be disabled by setting:
 
@@ -31,8 +35,7 @@ The sandbox can be disabled by setting:
 within an appropriate start-up .Renviron file.
 
 See `?renv::config` for more details. 
-> quarto::quarto_render('hourly_monitor.qmd')
-[31mWarning message:
+[39mning message:
 renv took longer than expected (380 seconds) to activate the sandbox.
 
 The sandbox can be disabled by setting:
