@@ -42,19 +42,22 @@ The sandbox can be disabled by setting:
 within an appropriate start-up .Renviron file.
 
 See `?renv::config` for more details. 
-[39me the sandbox.
+[39m[31m
 
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+SE
 
 within an appropriate start-up .Renviron file.
 
 See `?renv::config` for more details. 
-[39mithin an appropriate start-up .Renviron file.
+[39m[31m
 
-See `?renv::config` for more details. 
-Error in `quarto::quarto_render()`:
+processing file: hourly_monitor.qmd
+[39m1/15                  
+2/15 [load]           
+ `quarto::quarto_render()`:
 ✖ Error running quarto cli.
 Caused by error:
 ! System command 'quarto' failed
