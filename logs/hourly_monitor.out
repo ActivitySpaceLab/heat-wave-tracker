@@ -1,6 +1,20 @@
-- Project '~/research/heat-wave-tracker' loaded. [renv 1.1.4]
 
-NOTE: Dependency discovery took 13 seconds during snapshot.
-Consider using .renvignore to ignore files, or switching to explicit snapshots.
-See `?renv::dependencies` for more information.
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certaiWarning message:
+renv took longer than expected (6200 seconds) to activate the sandbox.
+
+The sandbox can be disabled by setting:
+
+    RENV_CONFIG_SANDBOX_ENABLED = FALSE
+
+within an appropriate start-up .Renviron file.
+
+See `?renv::config` for more details. 
+> quarto::quarto_render('hourly_monitor.qmd')
+rt()' for an HTML browser interface to help.
+Type 'q()' to quit R.
 
