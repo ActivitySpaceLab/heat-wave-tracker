@@ -36,7 +36,7 @@ Backtrace:
   8. │     └─base::is.data.frame(y) at dplyr/R/src.R:54:3
   9. └─readr::read_rds("data/station_info.Rds") at dplyr/R/join.R:317:3
  10.   └─base::readRDS(con, refhook = refhook) at readr/R/rds.R:21:3
-[39m[31m
+
 
 
 Quitting from lines 19-37 [load] (hourly_monitor.qmd)
