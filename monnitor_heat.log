@@ -10021,3 +10021,7 @@ Changes not staged for commit:
 	modified:   logs/hourly_monitor.ouAlready up to date.
 [main 43acc258e3] new data and log files (cluster - automated)
  4 files changed, 4 insertions(+)
+[main cd5fa3ae1a] new data and log files (cluster - automated)
+ 130 files changed, 564 insertions(+), 504 deletions(-)
+ delete mode 100644 hourly_monitor.rmarkdown
+Already up to date.
