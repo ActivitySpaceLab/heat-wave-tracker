@@ -10025,3 +10025,58 @@ Changes not staged for commit:
  130 files changed, 564 insertions(+), 504 deletions(-)
  delete mode 100644 hourly_monitor.rmarkdown
 Already up to date.
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   hourly_monitor.log
+	modified:   logs/heat_waves_selected_cities.out
+	modified:   logs/hourly_monitor.out
+	modified:   logs/render_hourly_monitor.out
+	modified:   logs/render_index.out
+
+no changes added to commit (use "git add" and/or "git commit -a")
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   hourly_monitor.log
+	modified:   logs/heat_waves_selected_cities.out
+	modified:   logs/hourly_monitor.out
+	modified:   logs/render_hourly_monitor.out
+	modified:   logs/render_index.out
+	modified:   monnitor_heat.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   hourly_monitor.log
+	modified:   logs/heat_waves_selected_cities.out
+	modified:   logs/hourly_monitor.out
+	modified:   logs/render_hourly_monitor.out
+	modified:   logs/render_index.out
+	modified:   monnitor_heat.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   hourly_monitor.log
+	modified:   logs/heat_waves_selected_cities.out
+	modified:   logs/hourly_monitor.out
+	modified:   logs/render_hourly_monitor.out
+	modified:   logs/render_index.out
+	modified:   monnitor_heat.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
